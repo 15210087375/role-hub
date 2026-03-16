@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "updated_at": "2026-03-16",
+  "generated_from": "C:/Users/Administrator/.config/opencode/roles/index.json",
+  "roles": [
+    {
+      "id": "role-hr",
+      "status": "active",
+      "purpose": "Intake role requests, evaluate overlap, and route or create role templates",
+      "triggers": [
+        "enter hr mode",
+        "hr mode",
+        "switch role",
+        "create role",
+        "evaluate role overlap"
+      ],
+      "scope": [
+        "governance",
+        "routing",
+        "lifecycle"
+      ]
+    },
+    {
+      "id": "role-master",
+      "status": "active",
+      "purpose": "Document-driven audit, task decomposition, staffing orchestration, and final release gating across modules.",
+      "triggers": [
+        "\u6700\u7ec8\u9a8c\u6536",
+        "\u95e8\u7981\u5ba1\u6838",
+        "\u4e25\u683c\u8bc4\u5ba1",
+        "\u9700\u6c42\u504f\u5dee\u68c0\u67e5",
+        "\u8054\u8c03\u653e\u884c",
+        "\u4e0a\u7ebf\u524d\u68c0\u67e5",
+        "\u53d1\u5e03\u963b\u65ad",
+        "\u590d\u9a8c\u5173\u5355",
+        "\u4e3b\u7406\u4eba\u6a21\u5f0f",
+        "\u4f60\u597d\u4e3b\u7406\u4eba",
+        "\u4f60\u597d\uff0c\u4e3b\u7406\u4eba",
+        "\u4e3b\u7406\u4eba\u4f60\u597d",
+        "\u4f60\u597dmaster",
+        "\u4f60\u597d master",
+        "\u5ba1\u5224\u6a21\u5f0f",
+        "\u68c0\u67e5\u5b98\u6a21\u5f0f",
+        "master mode"
+      ],
+      "scope": [
+        "master",
+        "audit",
+        "release",
+        "governance",
+        "qa"
+      ]
+    },
+    {
+      "id": "role-planner",
+      "status": "active",
+      "purpose": "Define and maintain requirement baselines, decompose work into executable tasks, and control requirement changes with clear impact.",
+      "triggers": [
+        "planner mode",
+        "product planning",
+        "\u7b56\u5212\u6a21\u5f0f",
+        "\u9700\u6c42\u7b56\u5212",
+        "\u9700\u6c42\u62c6\u89e3",
+        "\u8303\u56f4\u5b9a\u4e49",
+        "\u4f18\u5148\u7ea7\u89c4\u5212"
+      ],
+      "scope": [
+        "planning",
+        "requirements",
+        "decomposition",
+        "coordination"
+      ]
+    },
+    {
+      "id": "role-coder",
+      "status": "active",
+      "purpose": "Deliver production-ready software by turning requirements into verifiable code, tests, and documentation with traceable evidence.",
+      "triggers": [
+        "coder mode",
+        "general coder",
+        "write code",
+        "implement feature",
+        "fix bug",
+        "refactor code",
+        "\u7f16\u7a0b\u6a21\u5f0f",
+        "\u5f00\u53d1\u6a21\u5f0f"
+      ],
+      "scope": [
+        "coding",
+        "implementation",
+        "quality",
+        "delivery"
+      ]
+    }
+  ]
+}
