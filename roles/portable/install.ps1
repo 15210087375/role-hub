@@ -17,11 +17,16 @@ function Copy-RoleFiles {
 
   New-Item -ItemType Directory -Force -Path $ToRoles | Out-Null
 
-  $includeFiles = @("index.json", "role-*.md", "role_manager.py", "role_sync.py", "README.md", "role-template.md")
+  $includeFiles = @("index.json", "role-*.md", "role_manager.py", "role_sync.py", "role_agents_sync.py", "README.md", "role-template.md")
   foreach ($pattern in $includeFiles) {
     Get-ChildItem -Path $FromRoles -Filter $pattern -File -ErrorAction SilentlyContinue | ForEach-Object {
       Copy-Item -Force $_.FullName (Join-Path $ToRoles $_.Name)
     }
+  }
+
+  $agentsDir = Join-Path $FromRoles "agents"
+  if (Test-Path $agentsDir) {
+    Copy-Item -Path $agentsDir -Destination (Join-Path $ToRoles "agents") -Recurse -Force
   }
 }
 
@@ -61,6 +66,14 @@ if ($LASTEXITCODE -ne 0) {
 python "$syncScript" validate
 if ($LASTEXITCODE -ne 0) {
   throw "role_sync.py validate failed"
+}
+
+$agentsSyncScript = Join-Path $TargetRoles "role_agents_sync.py"
+if (Test-Path $agentsSyncScript) {
+  python "$agentsSyncScript"
+  if ($LASTEXITCODE -ne 0) {
+    throw "role_agents_sync.py failed"
+  }
 }
 
 Write-Output "Install completed. Roles and skills are synchronized."

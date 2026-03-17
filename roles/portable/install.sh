@@ -42,10 +42,16 @@ mkdir -p "$TARGET_ROLES" "$TARGET_SKILLS"
 cp -f "$FROM_ROLES/index.json" "$TARGET_ROLES/index.json"
 cp -f "$FROM_ROLES/role_manager.py" "$TARGET_ROLES/role_manager.py"
 cp -f "$FROM_ROLES/role_sync.py" "$TARGET_ROLES/role_sync.py"
+cp -f "$FROM_ROLES/role_agents_sync.py" "$TARGET_ROLES/role_agents_sync.py"
 
 for f in "$FROM_ROLES"/role-*.md "$FROM_ROLES/role-template.md" "$FROM_ROLES/README.md"; do
   [[ -f "$f" ]] && cp -f "$f" "$TARGET_ROLES/"
 done
+
+if [[ -d "$FROM_ROLES/agents" ]]; then
+  mkdir -p "$TARGET_ROLES/agents"
+  cp -Rf "$FROM_ROLES/agents/"* "$TARGET_ROLES/agents/"
+fi
 
 for d in "$FROM_SKILLS"/role-*; do
   [[ -d "$d" ]] || continue
@@ -56,5 +62,6 @@ done
 
 python3 "$TARGET_ROLES/role_sync.py" sync
 python3 "$TARGET_ROLES/role_sync.py" validate
+python3 "$TARGET_ROLES/role_agents_sync.py"
 
 echo "Install completed. Roles and skills are synchronized."

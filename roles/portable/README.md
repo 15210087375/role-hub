@@ -40,5 +40,6 @@ bash update.sh --repo-root "$HOME/role-hub"
 ## Notes
 
 - `install` copies role definitions and role skills, then runs `role_sync.py sync` and `role_sync.py validate`.
+- `install` also runs `role_agents_sync.py` to upsert Role Hub runtime rules into local `~/.config/opencode/AGENTS.md`.
 - `update` runs `git pull` first, then executes install.
 - Keep `roles/index.json` as the only source of truth.

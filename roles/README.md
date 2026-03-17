@@ -5,6 +5,8 @@
 - `role-template.md`: scaffold template for new roles.
 - `role_manager.py`: helper CLI for evaluate/create/touch/archive workflows.
 - `role_sync.py`: SSOT sync and role-skill validation helper.
+- `role_agents_sync.py`: upsert Role Hub runtime rules into local AGENTS.md.
+- `agents/`: managed AGENTS runtime fragment for cross-device installation.
 - `portable/`: cross-device install and update scripts for Windows/macOS.
 - `decisions.log`: audit log file (written only in audit mode).
 
@@ -27,6 +29,7 @@ python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" activate 
 python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" add-code --id role-final-gatekeeper --code GO-NOGO
 python "C:/Users/Administrator/.config/opencode/roles/role_sync.py" validate
 python "C:/Users/Administrator/.config/opencode/roles/role_sync.py" sync
+python "C:/Users/Administrator/.config/opencode/roles/role_agents_sync.py"
 ```
 
 ## Quick Experience Checklist

@@ -16,3 +16,4 @@ Cross-device role governance and skill execution bundle.
 
 - `python roles/role_sync.py validate`
 - `python roles/role_sync.py sync`
+- `python roles/role_agents_sync.py`
