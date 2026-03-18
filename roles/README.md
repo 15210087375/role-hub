@@ -12,24 +12,33 @@
 
 ## Source Of Truth
 
-- Canonical registry (SSOT): `C:/Users/Administrator/.config/opencode/roles/index.json`
-- HR local mirror (generated): `C:/Users/Administrator/.claude/skills/role-hr/roles/index.json`
+- Canonical registry (SSOT): `<OPENCODE_ROLES_DIR>/index.json`
+- Default `OPENCODE_ROLES_DIR` fallback: `~/.config/opencode/roles`
+- HR local mirror (generated): `~/.claude/skills/role-hr/roles/index.json`
 - Rule: edit SSOT first, then run sync.
+
+## Path Resolution (Recommended)
+
+- Priority 1: `OPENCODE_ROLES_DIR` (explicit)
+- Priority 2: `~/.config/opencode/roles` (fallback)
+- Startup check: ensure `index.json` and `role-master.md` exist under resolved directory.
+- PowerShell example: `$env:OPENCODE_ROLES_DIR = "$HOME/.config/opencode/roles"`
+- Bash example: `export OPENCODE_ROLES_DIR="$HOME/.config/opencode/roles"`
 
 ## Quick Commands
 
 ```bash
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" evaluate --id role-pm --purpose "product planning" --outputs prd roadmap --guardrails "clarify scope" --tooling read write
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" create --id role-pm --title "Product Manager" --purpose "turn vague requirements into executable plans" --triggers "pm mode" "product mode" --outputs prd acceptance-criteria --guardrails "ask constraints" "mvp first" --tooling read write apply_patch --tags product planning --codes PM PROD
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" touch --id role-hr
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" archive-stale --days 90
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" resolve --code FG
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" activate --input 主理人模式
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" activate --input 主理人模式 --touch --audit
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" add-code --id role-final-gatekeeper --code GO-NOGO
-python "C:/Users/Administrator/.config/opencode/roles/role_sync.py" validate
-python "C:/Users/Administrator/.config/opencode/roles/role_sync.py" sync
-python "C:/Users/Administrator/.config/opencode/roles/role_agents_sync.py"
+python "$OPENCODE_ROLES_DIR/role_manager.py" evaluate --id role-pm --purpose "product planning" --outputs prd roadmap --guardrails "clarify scope" --tooling read write
+python "$OPENCODE_ROLES_DIR/role_manager.py" create --id role-pm --title "Product Manager" --purpose "turn vague requirements into executable plans" --triggers "pm mode" "product mode" --outputs prd acceptance-criteria --guardrails "ask constraints" "mvp first" --tooling read write apply_patch --tags product planning --codes PM PROD
+python "$OPENCODE_ROLES_DIR/role_manager.py" touch --id role-hr
+python "$OPENCODE_ROLES_DIR/role_manager.py" archive-stale --days 90
+python "$OPENCODE_ROLES_DIR/role_manager.py" resolve --code FG
+python "$OPENCODE_ROLES_DIR/role_manager.py" activate --input 主理人模式
+python "$OPENCODE_ROLES_DIR/role_manager.py" activate --input 主理人模式 --touch --audit
+python "$OPENCODE_ROLES_DIR/role_manager.py" add-code --id role-master --code GO-NOGO
+python "$OPENCODE_ROLES_DIR/role_sync.py" validate
+python "$OPENCODE_ROLES_DIR/role_sync.py" sync
+python "$OPENCODE_ROLES_DIR/role_agents_sync.py"
 ```
 
 ## Quick Experience Checklist
@@ -48,7 +57,7 @@ Default runtime is lightweight now:
 - Command:
 
 ```bash
-powershell -NoProfile -Command "Get-Item 'C:/Users/Administrator/.config/opencode/roles/decisions.log' | Select-Object FullName,Length,LastWriteTime"
+powershell -NoProfile -Command "Get-Item '$env:OPENCODE_ROLES_DIR/decisions.log' | Select-Object FullName,Length,LastWriteTime"
 ```
 
 3. Rotate decision log if too large
@@ -56,7 +65,7 @@ powershell -NoProfile -Command "Get-Item 'C:/Users/Administrator/.config/opencod
 - Example:
 
 ```bash
-powershell -NoProfile -Command "Copy-Item 'C:/Users/Administrator/.config/opencode/roles/decisions.log' 'C:/Users/Administrator/.config/opencode/roles/decisions-archive-$(Get-Date -Format yyyyMMdd-HHmmss).log'; Clear-Content 'C:/Users/Administrator/.config/opencode/roles/decisions.log'"
+powershell -NoProfile -Command "Copy-Item '$env:OPENCODE_ROLES_DIR/decisions.log' '$env:OPENCODE_ROLES_DIR/decisions-archive-$(Get-Date -Format yyyyMMdd-HHmmss).log'; Clear-Content '$env:OPENCODE_ROLES_DIR/decisions.log'"
 ```
 
 4. Check role registry and target role file size
@@ -81,8 +90,8 @@ powershell -NoProfile -Command "Copy-Item 'C:/Users/Administrator/.config/openco
 Quick checks:
 
 ```bash
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" resolve --code 主理人
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" activate --input 主理人模式
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" activate --input 主理人模式 --touch --audit
-python "C:/Users/Administrator/.config/opencode/roles/role_manager.py" evaluate --id role-probe --purpose "final acceptance gate" --outputs report decision --guardrails "evidence first" --tooling read grep bash
+python "$OPENCODE_ROLES_DIR/role_manager.py" resolve --code 主理人
+python "$OPENCODE_ROLES_DIR/role_manager.py" activate --input 主理人模式
+python "$OPENCODE_ROLES_DIR/role_manager.py" activate --input 主理人模式 --touch --audit
+python "$OPENCODE_ROLES_DIR/role_manager.py" evaluate --id role-probe --purpose "final acceptance gate" --outputs report decision --guardrails "evidence first" --tooling read grep bash
 ```

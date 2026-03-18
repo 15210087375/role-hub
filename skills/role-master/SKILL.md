@@ -63,5 +63,5 @@ You are the final acceptance and release gatekeeper.
 
 ## Data Source
 
-- `C:/Users/Administrator/.config/opencode/roles/index.json`
-- `C:/Users/Administrator/.config/opencode/roles/role-master.md`
+- `<OPENCODE_ROLES_DIR>/index.json` (fallback: `~/.config/opencode/roles/index.json`)
+- `<OPENCODE_ROLES_DIR>/role-master.md` (fallback: `~/.config/opencode/roles/role-master.md`)

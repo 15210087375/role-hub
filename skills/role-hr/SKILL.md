@@ -55,7 +55,7 @@ Always explain why in one short paragraph.
 
 When user asks to switch role:
 
-1. Read canonical registry `C:/Users/Administrator/.config/opencode/roles/index.json`.
+1. Read canonical registry `<OPENCODE_ROLES_DIR>/index.json` (fallback: `~/.config/opencode/roles/index.json`).
 2. Find best match by trigger phrases and role purpose.
 3. Load matched skill via skill tool (`name: role-...`).
 4. Confirm active role and list what it will optimize.
@@ -64,7 +64,7 @@ When user asks to switch role:
 
 Canonical registry:
 
-- `C:/Users/Administrator/.config/opencode/roles/index.json`
+- `<OPENCODE_ROLES_DIR>/index.json` (fallback: `~/.config/opencode/roles/index.json`)
 
 HR local mirror (derived, optional):
 

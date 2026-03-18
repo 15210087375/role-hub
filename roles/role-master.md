@@ -16,9 +16,11 @@
 
 ## 单一真源（Single Source of Truth）
 
-- `C:/Users/Administrator/.config/opencode/roles/role-master.md` 是运行规则主文件（canonical）。
-- `C:/Users/Administrator/.claude/skills/role-master/SKILL.md` 作为技能入口与摘要说明。
-- 两文件冲突时，`SHALL` 以主规则文件为准，并在下一次维护中同步修复。
+- 运行主目录由 `OPENCODE_ROLES_DIR` 决定（推荐显式配置）。
+- 若未设置 `OPENCODE_ROLES_DIR`，默认回退到 `~/.config/opencode/roles`。
+- canonical 文件为 `<OPENCODE_ROLES_DIR>/role-master.md`，注册表为 `<OPENCODE_ROLES_DIR>/index.json`。
+- 技能入口文件为 `~/.claude/skills/role-master/SKILL.md`。
+- 两文件冲突时，`SHALL` 以 canonical 主规则文件为准，并在下一次维护中同步修复。
 
 ## Responsibilities
 

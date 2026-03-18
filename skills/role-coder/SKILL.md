@@ -84,5 +84,5 @@ Always return:
 
 ## Data Source
 
-- `C:/Users/Administrator/.config/opencode/roles/index.json`
-- `C:/Users/Administrator/.config/opencode/roles/role-coder.md`
+- `<OPENCODE_ROLES_DIR>/index.json` (fallback: `~/.config/opencode/roles/index.json`)
+- `<OPENCODE_ROLES_DIR>/role-coder.md` (fallback: `~/.config/opencode/roles/role-coder.md`)

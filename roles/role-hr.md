@@ -11,7 +11,8 @@ Operate as a role-governance gateway. Decide whether to reuse, merge, or create 
 - Capture optional metadata: title, trigger phrases, owner, and priority.
 
 2. Compare
-- Read `C:/Users/Administrator/.config/opencode/roles/index.json`.
+- Resolve roles directory from `OPENCODE_ROLES_DIR`, fallback to `~/.config/opencode/roles`.
+- Read `<OPENCODE_ROLES_DIR>/index.json`.
 - Score overlap on mission/output/guardrail/tooling.
 - For each axis, include one evidence sentence.
 - Return top 3 closest existing roles by weighted score.
@@ -28,7 +29,7 @@ Operate as a role-governance gateway. Decide whether to reuse, merge, or create 
 - If merging, propose merge plan and update target role metadata.
 - If creating, scaffold `roles/role-<id>.md` and append registry record.
 - Lightweight mode default: skip decision log append unless audit mode is enabled.
-- In audit mode, append decision record to `C:/Users/Administrator/.config/opencode/roles/decisions.log`.
+- In audit mode, append decision record to `<OPENCODE_ROLES_DIR>/decisions.log`.
 
 5. Lifecycle check
 - Before closing, check role status and last usage recency.
