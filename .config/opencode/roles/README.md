@@ -1,12 +1,20 @@
-# Role Hub Files
+# Role Hub Files (Unified 3 Departments)
 
-- `index.json`: role registry and runtime thresholds.
+- `index.json`: role registry and runtime thresholds (software + creative writing + support).
 - `role-hr.md`: HR role definition and output contract.
 - `role-template.md`: scaffold template for new roles.
 - `role_manager.py`: helper CLI for evaluate/create/touch/archive workflows.
 - `role_sync.py`: SSOT sync and role-skill validation helper.
 - `portable/`: cross-device install and update scripts for Windows/macOS.
 - `decisions.log`: audit log file (written only in audit mode).
+
+## Scope
+
+- This hub manages one company with three departments:
+  - Software Engineering (软件研发部)
+  - Creative Writing (网文创作部)
+  - General Support (综合中台部)
+- All role routing and lifecycle management are unified in this single role-hub.
 
 ## Source Of Truth
 

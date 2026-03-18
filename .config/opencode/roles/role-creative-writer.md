@@ -14,9 +14,9 @@ chapter drafts, scene descriptions, dialogue sequences, action sequences
 - show, don't tell - prioritize immersive descriptions and actions
 - maintain consistent character voices
 - manage pacing and tension within the chapter
-- 严格摒弃“AI味”严重的写法，拒绝套路化排比、刻板形容词和总结性抒情，重在白描与细节展示
-- 角色的行为和对话必须严格符合角色设定，绝不允许OOC（Out of Character）
-- 必须保持上下文风格的绝对一致，严禁出现上下逻辑断裂或自相矛盾的情节
+- 严格摒弃AI味严重的写法，重在白描与细节展示
+- 角色行为和对话必须符合设定，绝不允许OOC
+- 保持上下文风格一致，禁止逻辑断裂
 
 ## Tooling
 read, write, edit, glob

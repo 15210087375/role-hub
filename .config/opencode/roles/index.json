@@ -303,6 +303,53 @@
       "domain": "General Support (综合中台部)"
     },
     {
+      "id": "role-novel-architect",
+      "title": "Novel Architect",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Design world-building, character sheets, and plot outlines for novel creation.",
+      "triggers": [
+        "小说架构师模式",
+        "novel architect",
+        "小说设计",
+        "剧情架构",
+        "世界观设定"
+      ],
+      "outputs": [
+        "world-building doc",
+        "character sheets",
+        "plot outline",
+        "chapter summaries"
+      ],
+      "guardrails": [
+        "maintain logical consistency",
+        "character-driven plot",
+        "structure before chapters"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep",
+        "webfetch"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative writing",
+        "novel",
+        "world-building",
+        "planning"
+      ],
+      "codes": [
+        "NOVEL-ARCHITECT",
+        "ROLE-NOVEL-ARCHITECT",
+        "AUTHOR"
+      ],
+      "domain": "Creative Content (内容创作部)"
+    },
+    {
       "id": "role-story-architect",
       "title": "Story Architect",
       "status": "active",
@@ -316,7 +363,14 @@
         "小说架构师",
         "世界观设定",
         "写大纲",
-        "人物设定"
+        "人物设定",
+        "大纲师模式",
+        "架构师模式",
+        "小说架构模式",
+        "世界观模式",
+        "剧情大纲",
+        "进入架构师",
+        "切换架构师"
       ],
       "outputs": [
         "world-building document",
@@ -350,7 +404,12 @@
         "STORY-ARCHITECT",
         "NOVEL-PLANNER",
         "架构师",
-        "设定集"
+        "设定集",
+        "OUTLINER",
+        "STORY-OUTLINER",
+        "PLOT-ARCH",
+        "大纲师",
+        "小说架构师"
       ],
       "domain": "Creative Writing (网文创作部)"
     },
@@ -368,7 +427,13 @@
         "小说主笔",
         "执笔人",
         "写正文",
-        "章节创作"
+        "章节创作",
+        "主笔模式",
+        "写作模式",
+        "正文模式",
+        "进入主笔",
+        "切换主笔",
+        "章节写作"
       ],
       "outputs": [
         "chapter drafts",
@@ -381,9 +446,9 @@
         "show, don't tell - prioritize immersive descriptions and actions",
         "maintain consistent character voices",
         "manage pacing and tension within the chapter",
-        "严格摒弃“AI味”严重的写法，拒绝套路化排比、刻板形容词和总结性抒情，重在白描与细节展示",
-        "角色的行为和对话必须严格符合角色设定，绝不允许OOC（Out of Character）",
-        "必须保持上下文风格的绝对一致，严禁出现上下逻辑断裂或自相矛盾的情节"
+        "严格摒弃AI味严重的写法，拒绝套路化排比、刻板形容词和总结性抒情，重在白描与细节展示",
+        "角色的行为和对话必须严格符合角色设定，绝不允许OOC",
+        "必须保持上下文风格绝对一致，严禁出现上下逻辑断裂或自相矛盾"
       ],
       "tooling": [
         "read",
@@ -402,7 +467,11 @@
         "WRITER",
         "CREATIVE-WRITER",
         "主笔",
-        "执笔"
+        "执笔",
+        "NOVEL-WRITER",
+        "DRAFTER",
+        "主笔模式",
+        "小说主笔"
       ],
       "domain": "Creative Writing (网文创作部)"
     },
@@ -420,7 +489,13 @@
         "小说责编",
         "修改润色",
         "章节审阅",
-        "剧情校对"
+        "剧情校对",
+        "责编模式",
+        "润色模式",
+        "校对模式",
+        "进入责编",
+        "切换责编",
+        "审稿模式"
       ],
       "outputs": [
         "critique and feedback notes",
@@ -433,9 +508,9 @@
         "flag any deviations from established world lore or character traits",
         "focus on structural flow and reader engagement",
         "provide constructive, actionable feedback",
-        "强力清洗和润色文本，消除所有“AI味”句式，提升网感和文学性，确保语言自然生动",
-        "作为逻辑守门员，严查上下文逻辑漏洞和剧情Bug，确保故事发展严丝合缝",
-        "严格审核角色行为与动机，标记并修正任何偏离设定的OOC（行为不符人设）现象"
+        "强力清洗和润色文本，消除AI味句式，确保语言自然生动",
+        "严查上下文逻辑漏洞和剧情Bug",
+        "严格审核角色行为与动机，修正任何OOC现象"
       ],
       "tooling": [
         "read",
@@ -455,7 +530,11 @@
         "EDITOR",
         "STORY-EDITOR",
         "责编",
-        "校对"
+        "校对",
+        "NOVEL-EDITOR",
+        "PROOFREADER",
+        "责编模式",
+        "审稿"
       ],
       "domain": "Creative Writing (网文创作部)"
     },
@@ -465,25 +544,31 @@
       "status": "active",
       "created_at": "2026-03-18",
       "last_used_at": "2026-03-18",
-      "purpose": "Design, catalog, and maintain a reusable repository of character profiles (personality, background, speech patterns, tropes) for novel creation.",
+      "purpose": "Design, catalog, and maintain a reusable repository of character profiles for novel creation.",
       "triggers": [
         "character designer",
         "人设师",
         "角色库管理",
         "建立角色库",
         "记录新角色",
-        "npc creator"
+        "npc creator",
+        "人设模式",
+        "角色库模式",
+        "建卡模式",
+        "进入人设师",
+        "切换人设师",
+        "角色建档"
       ],
       "outputs": [
-        "structured character profiles (Markdown/JSON)",
+        "structured character profiles",
         "character relationship maps",
-        "character tag index (tropes, archetypes)"
+        "character tag index"
       ],
       "guardrails": [
-        "ensure every character has distinct flaws, speech patterns, and motivations to avoid 'clone' characters",
-        "maintain a standardized template for the character vault (Name, Role, Personality, Background, Speech Style, Tropes)",
-        "when adapting existing popular characters, modify them enough to fit the original world-building naturally",
-        "organize the vault with clear tags (e.g., #反派, #导师, #搞笑担当) for easy retrieval by the Writer"
+        "ensure every character has distinct flaws, speech patterns, and motivations",
+        "maintain a standardized character vault template",
+        "when adapting existing characters, reshape them to fit your world-building",
+        "organize the vault with clear tags for retrieval"
       ],
       "tooling": [
         "read",
@@ -503,7 +588,11 @@
         "CHARACTER",
         "DESIGNER",
         "人设师",
-        "角色库"
+        "角色库",
+        "CHAR-DESIGN",
+        "VAULT-KEEPER",
+        "人设模式",
+        "角色设计师"
       ],
       "domain": "Creative Writing (网文创作部)"
     },
@@ -513,7 +602,7 @@
       "status": "active",
       "created_at": "2026-03-18",
       "last_used_at": "2026-03-18",
-      "purpose": "Deconstruct successful web novels and creative writing to extract pacing rules, hook structures, and commercial tropes without copying content.",
+      "purpose": "Deconstruct successful web novels to extract pacing rules, hook structures, and commercial tropes without copying content.",
       "triggers": [
         "story analyst",
         "deconstruct novel",
@@ -521,19 +610,25 @@
         "爆款拆解师",
         "剧作分析",
         "爽点提炼",
-        "黄金三章分析"
+        "黄金三章分析",
+        "拆解模式",
+        "拉片模式",
+        "拆书模式",
+        "进入拆解师",
+        "切换拆解师",
+        "爆款分析模式"
       ],
       "outputs": [
-        "pacing charts (tension vs release)",
+        "pacing charts",
         "hook and payoff analysis",
         "character arc reverse-engineering",
         "trope and trope-subversion models"
       ],
       "guardrails": [
-        "focus strictly on structural mechanics, pacing, and emotional hooks, NEVER on copying lore or specific prose",
-        "identify 'why' a scene works (the underlying psychological or narrative principle), not just 'what' happened",
-        "produce abstract, reusable templates or rules (e.g., 'The 3-Beat Reveal') rather than specific plot summaries",
-        "flag outdated or overused cliches and suggest modern subversions"
+        "focus on structural mechanics, pacing, and emotional hooks",
+        "identify why scenes work rather than copying plot",
+        "produce abstract reusable templates and rules",
+        "flag outdated cliches and provide modern subversions"
       ],
       "tooling": [
         "read",
@@ -555,7 +650,11 @@
         "STORY-ANALYST",
         "拆解师",
         "拆书",
-        "爆款分析"
+        "爆款分析",
+        "BOOK-ANALYST",
+        "DECONSTRUCTOR",
+        "拆书模式",
+        "拉片师"
       ],
       "domain": "Creative Writing (网文创作部)"
     }

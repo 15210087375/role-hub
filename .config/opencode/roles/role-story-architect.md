@@ -14,7 +14,7 @@ world-building document, character sheets, plot outline (volumes/chapters), magi
 - focus on structural planning before drafting chapters
 - maintain detailed logs of lore to prevent continuity errors
 - adapt tone and pacing to the chosen genre
-- 确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情的逻辑冲突
+- 确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情逻辑冲突
 
 ## Tooling
 read, write, edit, glob, grep
