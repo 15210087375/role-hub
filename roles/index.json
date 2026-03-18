@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-03-17",
+  "updated_at": "2026-03-18",
   "settings": {
     "overlap_thresholds": {
       "reuse_gte": 0.82,
@@ -62,7 +62,8 @@
         "HR",
         "ROLE-HR",
         "HR-GATE"
-      ]
+      ],
+      "domain": "General Support (综合中台部)"
     },
     {
       "id": "role-master",
@@ -72,37 +73,37 @@
       "last_used_at": "2026-03-16",
       "purpose": "Document-driven audit, task decomposition, staffing orchestration, and final release gating across modules.",
       "triggers": [
-        "\u6700\u7ec8\u9a8c\u6536",
-        "\u95e8\u7981\u5ba1\u6838",
-        "\u4e25\u683c\u8bc4\u5ba1",
-        "\u9700\u6c42\u504f\u5dee\u68c0\u67e5",
-        "\u8054\u8c03\u653e\u884c",
-        "\u4e0a\u7ebf\u524d\u68c0\u67e5",
-        "\u53d1\u5e03\u963b\u65ad",
-        "\u590d\u9a8c\u5173\u5355",
-        "\u4e3b\u7406\u4eba\u6a21\u5f0f",
-        "\u4f60\u597d\u4e3b\u7406\u4eba",
-        "\u4f60\u597d\uff0c\u4e3b\u7406\u4eba",
-        "\u4e3b\u7406\u4eba\u4f60\u597d",
-        "\u4f60\u597dmaster",
-        "\u4f60\u597d master",
-        "\u5ba1\u5224\u6a21\u5f0f",
-        "\u68c0\u67e5\u5b98\u6a21\u5f0f",
+        "最终验收",
+        "门禁审核",
+        "严格评审",
+        "需求偏差检查",
+        "联调放行",
+        "上线前检查",
+        "发布阻断",
+        "复验关单",
+        "主理人模式",
+        "你好主理人",
+        "你好，主理人",
+        "主理人你好",
+        "你好master",
+        "你好 master",
+        "审判模式",
+        "检查官模式",
         "master mode"
       ],
       "outputs": [
-        "\u9a8c\u6536\u62a5\u544a",
-        "\u95e8\u7981\u8bb0\u5f55",
-        "\u8054\u8c03\u57fa\u7ebf\u6587\u6863",
-        "\u95ee\u9898\u5355",
-        "\u4efb\u52a1\u7f16\u53f7\u53f0\u8d26"
+        "验收报告",
+        "门禁记录",
+        "联调基线文档",
+        "问题单",
+        "任务编号台账"
       ],
       "guardrails": [
-        "\u4e0d\u5728\u7f3a\u8bc1\u636e\u60c5\u51b5\u4e0b\u9ed8\u8ba4\u901a\u8fc7",
-        "\u4e0d\u7ed5\u8fc7\u6d41\u7a0b\u53e3\u5934\u653e\u884c",
-        "\u7981\u6b62\u65e0\u6388\u6743\u7834\u574f\u6027\u64cd\u4f5c",
-        "\u7981\u6b62\u8d8a\u6743\u4fee\u6539\u6838\u5fc3\u903b\u8f91",
-        "\u65e0\u4efb\u52a1\u7f16\u53f7\u6216\u7f16\u53f7\u4e0d\u4e00\u81f4\u7684\u63d0\u4ea4\u4e00\u5f8b\u62d2\u7edd"
+        "不在缺证据情况下默认通过",
+        "不绕过流程口头放行",
+        "禁止无授权破坏性操作",
+        "禁止越权修改核心逻辑",
+        "无任务编号或编号不一致的提交一律拒绝"
       ],
       "tooling": [
         "read",
@@ -125,16 +126,17 @@
         "GATEKEEPER",
         "ROLE-MASTER",
         "MASTER",
-        "\u4f60\u597d\u4e3b\u7406\u4eba",
-        "\u4f60\u597d\uff0c\u4e3b\u7406\u4eba",
-        "\u4e3b\u7406\u4eba\u4f60\u597d",
-        "\u4f60\u597dMASTER",
-        "\u4f60\u597d MASTER",
-        "\u5ba1\u5224",
-        "\u68c0\u67e5\u5b98",
+        "你好主理人",
+        "你好，主理人",
+        "主理人你好",
+        "你好MASTER",
+        "你好 MASTER",
+        "审判",
+        "检查官",
         "Master",
-        "\u4e3b\u7406\u4eba"
-      ]
+        "主理人"
+      ],
+      "domain": "Software Engineering (软件研发部)"
     },
     {
       "id": "role-planner",
@@ -146,11 +148,11 @@
       "triggers": [
         "planner mode",
         "product planning",
-        "\u7b56\u5212\u6a21\u5f0f",
-        "\u9700\u6c42\u7b56\u5212",
-        "\u9700\u6c42\u62c6\u89e3",
-        "\u8303\u56f4\u5b9a\u4e49",
-        "\u4f18\u5148\u7ea7\u89c4\u5212"
+        "策划模式",
+        "需求策划",
+        "需求拆解",
+        "范围定义",
+        "优先级规划"
       ],
       "outputs": [
         "requirement baseline",
@@ -180,7 +182,8 @@
         "PLANNER",
         "ROLE-PLANNER",
         "PM"
-      ]
+      ],
+      "domain": "Software Engineering (软件研发部)"
     },
     {
       "id": "role-coder",
@@ -196,8 +199,8 @@
         "implement feature",
         "fix bug",
         "refactor code",
-        "\u7f16\u7a0b\u6a21\u5f0f",
-        "\u5f00\u53d1\u6a21\u5f0f"
+        "编程模式",
+        "开发模式"
       ],
       "outputs": [
         "code changes",
@@ -235,7 +238,8 @@
         "ROLE-CODER",
         "DEV",
         "ENGINEER"
-      ]
+      ],
+      "domain": "Software Engineering (软件研发部)"
     },
     {
       "id": "role-notebook-researcher",
@@ -295,7 +299,364 @@
         "RESEARCHER",
         "NB-RESEARCH",
         "ROLE-NOTEBOOK-RESEARCHER"
-      ]
+      ],
+      "domain": "General Support (综合中台部)"
+    },
+    {
+      "id": "role-novel-architect",
+      "title": "Novel Architect",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Design world-building, character sheets, and plot outlines for novel creation.",
+      "triggers": [
+        "小说架构师模式",
+        "novel architect",
+        "小说设计",
+        "剧情架构",
+        "世界观设定"
+      ],
+      "outputs": [
+        "world-building doc",
+        "character sheets",
+        "plot outline",
+        "chapter summaries"
+      ],
+      "guardrails": [
+        "maintain logical consistency",
+        "character-driven plot",
+        "structure before chapters"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep",
+        "webfetch"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative writing",
+        "novel",
+        "world-building",
+        "planning"
+      ],
+      "codes": [
+        "NOVEL-ARCHITECT",
+        "ROLE-NOVEL-ARCHITECT",
+        "AUTHOR"
+      ],
+      "domain": "Creative Content (内容创作部)"
+    },
+    {
+      "id": "role-story-architect",
+      "title": "Story Architect",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Design world-building, character profiles, main plots, and detailed outlines for long-form creative writing.",
+      "triggers": [
+        "story architect",
+        "novel planner",
+        "world builder",
+        "小说架构师",
+        "世界观设定",
+        "写大纲",
+        "人物设定",
+        "大纲师模式",
+        "架构师模式",
+        "小说架构模式",
+        "世界观模式",
+        "剧情大纲",
+        "进入架构师",
+        "切换架构师"
+      ],
+      "outputs": [
+        "world-building document",
+        "character sheets",
+        "plot outline (volumes/chapters)",
+        "magic/power system rules"
+      ],
+      "guardrails": [
+        "ensure internal consistency of the world and characters",
+        "focus on structural planning before drafting chapters",
+        "maintain detailed logs of lore to prevent continuity errors",
+        "adapt tone and pacing to the chosen genre",
+        "确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情的逻辑冲突"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative-writing",
+        "planning",
+        "world-building",
+        "outlining"
+      ],
+      "codes": [
+        "ARCHITECT",
+        "STORY-ARCHITECT",
+        "NOVEL-PLANNER",
+        "架构师",
+        "设定集",
+        "OUTLINER",
+        "STORY-OUTLINER",
+        "PLOT-ARCH",
+        "大纲师",
+        "小说架构师"
+      ],
+      "domain": "Creative Writing (网文创作部)"
+    },
+    {
+      "id": "role-creative-writer",
+      "title": "Creative Writer",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Draft engaging and immersive narrative prose based on outlines and character profiles.",
+      "triggers": [
+        "creative writer",
+        "novel writer",
+        "draft chapter",
+        "小说主笔",
+        "执笔人",
+        "写正文",
+        "章节创作",
+        "主笔模式",
+        "写作模式",
+        "正文模式",
+        "进入主笔",
+        "切换主笔",
+        "章节写作"
+      ],
+      "outputs": [
+        "chapter drafts",
+        "scene descriptions",
+        "dialogue sequences",
+        "action sequences"
+      ],
+      "guardrails": [
+        "strictly follow the provided outline and character sheets",
+        "show, don't tell - prioritize immersive descriptions and actions",
+        "maintain consistent character voices",
+        "manage pacing and tension within the chapter",
+        "严格摒弃AI味严重的写法，拒绝套路化排比、刻板形容词和总结性抒情，重在白描与细节展示",
+        "角色的行为和对话必须严格符合角色设定，绝不允许OOC",
+        "必须保持上下文风格绝对一致，严禁出现上下逻辑断裂或自相矛盾"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative-writing",
+        "drafting",
+        "prose",
+        "narrative"
+      ],
+      "codes": [
+        "WRITER",
+        "CREATIVE-WRITER",
+        "主笔",
+        "执笔",
+        "NOVEL-WRITER",
+        "DRAFTER",
+        "主笔模式",
+        "小说主笔"
+      ],
+      "domain": "Creative Writing (网文创作部)"
+    },
+    {
+      "id": "role-story-editor",
+      "title": "Story Editor",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Review, critique, and polish narrative prose for flow, consistency, grammar, and emotional impact.",
+      "triggers": [
+        "story editor",
+        "novel editor",
+        "proofread chapter",
+        "小说责编",
+        "修改润色",
+        "章节审阅",
+        "剧情校对",
+        "责编模式",
+        "润色模式",
+        "校对模式",
+        "进入责编",
+        "切换责编",
+        "审稿模式"
+      ],
+      "outputs": [
+        "critique and feedback notes",
+        "polished chapter text",
+        "continuity error reports",
+        "pacing adjustment suggestions"
+      ],
+      "guardrails": [
+        "preserve the writer's original voice while improving clarity",
+        "flag any deviations from established world lore or character traits",
+        "focus on structural flow and reader engagement",
+        "provide constructive, actionable feedback",
+        "强力清洗和润色文本，消除AI味句式，确保语言自然生动",
+        "严查上下文逻辑漏洞和剧情Bug",
+        "严格审核角色行为与动机，修正任何OOC现象"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative-writing",
+        "editing",
+        "quality-assurance",
+        "proofreading"
+      ],
+      "codes": [
+        "EDITOR",
+        "STORY-EDITOR",
+        "责编",
+        "校对",
+        "NOVEL-EDITOR",
+        "PROOFREADER",
+        "责编模式",
+        "审稿"
+      ],
+      "domain": "Creative Writing (网文创作部)"
+    },
+    {
+      "id": "role-character-designer",
+      "title": "Character Designer & Archivist",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Design, catalog, and maintain a reusable repository of character profiles for novel creation.",
+      "triggers": [
+        "character designer",
+        "人设师",
+        "角色库管理",
+        "建立角色库",
+        "记录新角色",
+        "npc creator",
+        "人设模式",
+        "角色库模式",
+        "建卡模式",
+        "进入人设师",
+        "切换人设师",
+        "角色建档"
+      ],
+      "outputs": [
+        "structured character profiles",
+        "character relationship maps",
+        "character tag index"
+      ],
+      "guardrails": [
+        "ensure every character has distinct flaws, speech patterns, and motivations",
+        "maintain a standardized character vault template",
+        "when adapting existing characters, reshape them to fit your world-building",
+        "organize the vault with clear tags for retrieval"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative-writing",
+        "character-design",
+        "archiving",
+        "world-building"
+      ],
+      "codes": [
+        "CHARACTER",
+        "DESIGNER",
+        "人设师",
+        "角色库",
+        "CHAR-DESIGN",
+        "VAULT-KEEPER",
+        "人设模式",
+        "角色设计师"
+      ],
+      "domain": "Creative Writing (网文创作部)"
+    },
+    {
+      "id": "role-story-analyst",
+      "title": "Story Analyst & Deconstructor",
+      "status": "active",
+      "created_at": "2026-03-18",
+      "last_used_at": "2026-03-18",
+      "purpose": "Deconstruct successful web novels to extract pacing rules, hook structures, and commercial tropes without copying content.",
+      "triggers": [
+        "story analyst",
+        "deconstruct novel",
+        "拆书",
+        "爆款拆解师",
+        "剧作分析",
+        "爽点提炼",
+        "黄金三章分析",
+        "拆解模式",
+        "拉片模式",
+        "拆书模式",
+        "进入拆解师",
+        "切换拆解师",
+        "爆款分析模式"
+      ],
+      "outputs": [
+        "pacing charts",
+        "hook and payoff analysis",
+        "character arc reverse-engineering",
+        "trope and trope-subversion models"
+      ],
+      "guardrails": [
+        "focus on structural mechanics, pacing, and emotional hooks",
+        "identify why scenes work rather than copying plot",
+        "produce abstract reusable templates and rules",
+        "flag outdated cliches and provide modern subversions"
+      ],
+      "tooling": [
+        "read",
+        "write",
+        "edit",
+        "glob",
+        "grep",
+        "webfetch"
+      ],
+      "owner": "system",
+      "tags": [
+        "creative-writing",
+        "analysis",
+        "deconstruction",
+        "theory"
+      ],
+      "codes": [
+        "ANALYST",
+        "STORY-ANALYST",
+        "拆解师",
+        "拆书",
+        "爆款分析",
+        "BOOK-ANALYST",
+        "DECONSTRUCTOR",
+        "拆书模式",
+        "拉片师"
+      ],
+      "domain": "Creative Writing (网文创作部)"
     }
   ]
 }
