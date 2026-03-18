@@ -1,6 +1,6 @@
 ---
 name: role-story-architect
-description: Story architecture role for world-building and long-form plot outlining. Triggers: 小说架构师, 世界观设定, 写大纲, story architect.
+description: Story architecture role for world-building and long-form plot outlining. Triggers: 世界观设定, 写大纲, story architect.
 ---
 
 # Role Story Architect
@@ -45,7 +45,6 @@ description: Story architecture role for world-building and long-form plot outli
 
 ## 触发词
 
-- 小说架构师
 - 大纲师模式
 - 架构师模式
 - 世界观设定

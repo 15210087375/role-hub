@@ -303,53 +303,6 @@
       "domain": "General Support (综合中台部)"
     },
     {
-      "id": "role-novel-architect",
-      "title": "Novel Architect",
-      "status": "active",
-      "created_at": "2026-03-18",
-      "last_used_at": "2026-03-18",
-      "purpose": "Design world-building, character sheets, and plot outlines for novel creation.",
-      "triggers": [
-        "小说架构师模式",
-        "novel architect",
-        "小说设计",
-        "剧情架构",
-        "世界观设定"
-      ],
-      "outputs": [
-        "world-building doc",
-        "character sheets",
-        "plot outline",
-        "chapter summaries"
-      ],
-      "guardrails": [
-        "maintain logical consistency",
-        "character-driven plot",
-        "structure before chapters"
-      ],
-      "tooling": [
-        "read",
-        "write",
-        "edit",
-        "glob",
-        "grep",
-        "webfetch"
-      ],
-      "owner": "system",
-      "tags": [
-        "creative writing",
-        "novel",
-        "world-building",
-        "planning"
-      ],
-      "codes": [
-        "NOVEL-ARCHITECT",
-        "ROLE-NOVEL-ARCHITECT",
-        "AUTHOR"
-      ],
-      "domain": "Creative Content (内容创作部)"
-    },
-    {
       "id": "role-story-architect",
       "title": "Story Architect",
       "status": "active",
@@ -360,7 +313,6 @@
         "story architect",
         "novel planner",
         "world builder",
-        "小说架构师",
         "世界观设定",
         "写大纲",
         "人物设定",
@@ -408,8 +360,7 @@
         "OUTLINER",
         "STORY-OUTLINER",
         "PLOT-ARCH",
-        "大纲师",
-        "小说架构师"
+        "大纲师"
       ],
       "domain": "Creative Content (内容创作部)"
     },

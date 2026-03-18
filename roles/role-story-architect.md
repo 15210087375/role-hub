@@ -4,7 +4,7 @@
 Design world-building, character profiles, main plots, and detailed outlines for long-form creative writing.
 
 ## Triggers
-story architect, novel planner, world builder, 小说架构师, 世界观设定, 写大纲, 人物设定
+story architect, novel planner, world builder, 世界观设定, 写大纲, 人物设定
 
 ## Outputs
 world-building document, character sheets, plot outline (volumes/chapters), magic/power system rules
