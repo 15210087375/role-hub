@@ -1,129 +1,144 @@
-# Role Hub 自动安装说明（给 AI 执行）
+# Role Hub 安装与更新说明（给 AI 直接执行）
 
-结论：可行。
+结论：本文件可直接作为 AI 执行手册。
 
-你可以把本文件直接发给 AI，让它在新设备上按步骤执行安装。
+你可以把这份文档发给 AI，让它自动完成：
+
+- 首次安装（新设备）
+- 后续更新（人员新增、角色变更、规则变更）
 
 ---
 
-## 0. 目标
+## 0. 执行目标
 
-把本仓库的角色系统安装到本机：
+将本仓库内容同步到本机运行目录，并完成校验：
 
-- `~/.config/opencode/roles`
-- `~/.claude/skills`
+- 角色目录：`~/.config/opencode/roles`
+- 技能目录：`~/.claude/skills`
 
-并完成同步与校验。
+并确保运行规则已同步到：
 
-安装脚本还会把 Role Hub runtime 规则自动写入本机 `~/.config/opencode/AGENTS.md`（幂等更新）。
+- `~/.config/opencode/AGENTS.md`
 
 ---
 
 ## 1. AI 执行前提
 
-请先确保：
+执行前请确认：
 
 1. 已安装 `git`
 2. 已安装 `python`（macOS/Linux 可用 `python3`）
-3. 机器可访问仓库：`https://github.com/15210087375/role-hub`
-4. AI 具备执行终端命令权限
+3. 可访问仓库：`https://github.com/15210087375/role-hub.git`
+4. AI 有终端命令执行权限
 
 ---
 
-## 2. 给 AI 的执行指令（可直接复制）
+## 2. 路径规则（必须遵守）
 
-请让 AI 严格按下列步骤执行，不要改路径规则：
+统一使用环境变量 `OPENCODE_ROLES_DIR`：
 
-1. 克隆仓库到当前用户目录。
-2. 进入仓库根目录。
-3. 根据系统执行安装脚本：
-   - Windows: `roles/portable/install.ps1`
-   - macOS/Linux: `roles/portable/install.sh`
-4. 安装完成后执行校验命令。
-5. 执行 AGENTS 规则同步命令并确认成功。
-5. 输出最终检查结果：
-   - 角色数量
-   - 缺失 skill 数量
-   - 是否可激活 `策划模式 / 编程模式 / 主理人模式`
+- 优先使用显式设置的 `OPENCODE_ROLES_DIR`
+- 未设置时回退到：`~/.config/opencode/roles`
+
+AI 不要硬编码机器绝对路径（如 `C:/Users/Administrator/...`）。
 
 ---
 
-## 3. 标准命令
+## 3. Windows 安装（首次）
 
-### Windows (PowerShell)
+当设备从未安装过 Role Hub 时，执行以下命令。
 
 ```powershell
 git clone https://github.com/15210087375/role-hub.git
 cd role-hub
+$env:OPENCODE_ROLES_DIR = "$HOME/.config/opencode/roles"
 powershell -ExecutionPolicy Bypass -File roles/portable/install.ps1 -SourceRoot "$PWD"
-python "$HOME/.config/opencode/roles/role_sync.py" validate
-python "$HOME/.config/opencode/roles/role_agents_sync.py"
+python "$env:OPENCODE_ROLES_DIR/role_sync.py" validate
+python "$env:OPENCODE_ROLES_DIR/role_agents_sync.py"
 ```
 
-### macOS / Linux
+---
+
+## 4. Windows 更新（后续）
+
+当仓库已有新角色/新人员/新规则时，在新设备执行更新：
+
+```powershell
+cd role-hub
+git pull origin main
+$env:OPENCODE_ROLES_DIR = "$HOME/.config/opencode/roles"
+powershell -ExecutionPolicy Bypass -File roles/portable/update.ps1 -RepoRoot "$PWD"
+python "$env:OPENCODE_ROLES_DIR/role_sync.py" validate
+python "$env:OPENCODE_ROLES_DIR/role_agents_sync.py"
+```
+
+---
+
+## 5. macOS/Linux（如需）
+
+### 首次安装
 
 ```bash
 git clone https://github.com/15210087375/role-hub.git
 cd role-hub
+export OPENCODE_ROLES_DIR="$HOME/.config/opencode/roles"
 bash roles/portable/install.sh --source-root "$PWD"
-python3 "$HOME/.config/opencode/roles/role_sync.py" validate
-python3 "$HOME/.config/opencode/roles/role_agents_sync.py"
+python3 "$OPENCODE_ROLES_DIR/role_sync.py" validate
+python3 "$OPENCODE_ROLES_DIR/role_agents_sync.py"
 ```
 
----
-
-## 4. 更新命令（后续使用）
-
-### Windows
-
-```powershell
-cd role-hub
-powershell -ExecutionPolicy Bypass -File roles/portable/update.ps1 -RepoRoot "$PWD"
-```
-
-### macOS / Linux
+### 后续更新
 
 ```bash
 cd role-hub
+git pull origin main
+export OPENCODE_ROLES_DIR="$HOME/.config/opencode/roles"
 bash roles/portable/update.sh --repo-root "$PWD"
+python3 "$OPENCODE_ROLES_DIR/role_sync.py" validate
+python3 "$OPENCODE_ROLES_DIR/role_agents_sync.py"
 ```
 
 ---
 
-## 5. 验收标准（AI 必须回传）
+## 6. 验收标准（AI 执行后必须回传）
 
-AI 执行后必须回传以下结果：
+AI 必须输出以下结果：
 
-1. `role_sync.py validate` 的 JSON 输出全文。
-2. `missing_skill_count` 必须为 `0`。
-3. 说明已安装路径：
-   - `~/.config/opencode/roles`
-   - `~/.claude/skills`
-4. 说明已同步 AGENTS：`~/.config/opencode/AGENTS.md`
-5. 提醒你重启会话（让新 skill 列表生效）。
-
----
-
-## 6. 常见问题
-
-1. Python 命令不存在：
-   - Windows 改用 `py`
-   - macOS/Linux 确认 `python3`
-
-2. PowerShell 策略拦截：
-   - 使用 `-ExecutionPolicy Bypass`（文档命令已包含）
-
-3. 新角色看不到：
-   - 先跑 `role_sync.py sync`
-   - 再重开会话
-
-4. 私有仓库拉取失败：
-   - 先登录 GitHub（`gh auth login`）
+1. `role_sync.py validate` 的 JSON 结果全文
+2. `missing_skill_count` 必须为 `0`
+3. 最终生效路径（`OPENCODE_ROLES_DIR` 实际值）
+4. 说明已同步 `~/.config/opencode/AGENTS.md`
+5. 激活测试结果：
+   - `主理人模式`
+   - `你好主理人`
+   - `编程模式`
+   - `策划模式`
+6. 提醒重开会话，使新规则完全生效
 
 ---
 
-## 7. 让 AI 执行时的一句话提示词
+## 7. 常见问题
 
-你可以直接发这句话给 AI：
+1. `python` 不可用：
+   - Windows 试 `py`
+   - macOS/Linux 使用 `python3`
 
-"请按仓库 `INSTALL_FOR_AI.md` 完整执行安装，严格使用文档命令，不要自行改路径。执行后回传 validate JSON、安装路径和触发词激活结果。"
+2. PowerShell 被策略拦截：
+   - 确保命令包含 `-ExecutionPolicy Bypass`
+
+3. 拉取失败（私有权限问题）：
+   - 先完成 `gh auth login` 或配置 Git 凭证
+
+4. 更新后看不到新增角色：
+   - 重新执行 `role_sync.py sync` 与 `role_sync.py validate`
+   - 重开会话后再测试触发词
+
+---
+
+## 8. 一句话给 AI 的指令（安装）
+
+请读取并严格执行 `INSTALL_FOR_AI.md` 的 Windows 首次安装流程，不要改路径策略。执行后回传 validate JSON、生效路径、AGENTS 同步结果和触发词激活结果。
+
+## 9. 一句话给 AI 的指令（更新）
+
+请读取并严格执行 `INSTALL_FOR_AI.md` 的 Windows 更新流程（含 git pull + update + validate + AGENTS 同步），并回传完整结果。
