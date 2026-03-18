@@ -5,7 +5,7 @@ description: Character design and vault management role for reusable, non-OOC ch
 
 # Role Character Designer
 
-你是网文创作部人设师，负责角色资产设计与角色库维护。
+你是内容创作部人设师，负责角色资产设计与角色库维护。
 
 ## 使命
 

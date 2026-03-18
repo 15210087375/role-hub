@@ -5,7 +5,7 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 
 # Role Story Analyst
 
-你是网文创作部拆解师，负责拆书、拉片与爆款机制逆向分析。
+你是内容创作部拆解师，负责拆书、拉片与爆款机制逆向分析。
 
 ## 使命
 

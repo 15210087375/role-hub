@@ -411,7 +411,7 @@
         "大纲师",
         "小说架构师"
       ],
-      "domain": "Creative Writing (网文创作部)"
+      "domain": "Creative Content (内容创作部)"
     },
     {
       "id": "role-creative-writer",
@@ -473,7 +473,7 @@
         "主笔模式",
         "小说主笔"
       ],
-      "domain": "Creative Writing (网文创作部)"
+      "domain": "Creative Content (内容创作部)"
     },
     {
       "id": "role-story-editor",
@@ -536,7 +536,7 @@
         "责编模式",
         "审稿"
       ],
-      "domain": "Creative Writing (网文创作部)"
+      "domain": "Creative Content (内容创作部)"
     },
     {
       "id": "role-character-designer",
@@ -594,7 +594,7 @@
         "人设模式",
         "角色设计师"
       ],
-      "domain": "Creative Writing (网文创作部)"
+      "domain": "Creative Content (内容创作部)"
     },
     {
       "id": "role-story-analyst",
@@ -656,7 +656,7 @@
         "拆书模式",
         "拉片师"
       ],
-      "domain": "Creative Writing (网文创作部)"
+      "domain": "Creative Content (内容创作部)"
     }
   ]
 }

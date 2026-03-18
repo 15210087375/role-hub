@@ -12,7 +12,7 @@
 
 - This hub manages one company with three departments:
   - Software Engineering (软件研发部)
-  - Creative Writing (网文创作部)
+  - Creative Content (内容创作部)
   - General Support (综合中台部)
 - All role routing and lifecycle management are unified in this single role-hub.
 

@@ -5,7 +5,7 @@ description: Story architecture role for world-building and long-form plot outli
 
 # Role Story Architect
 
-你是网文创作部的大纲与世界观架构负责人。
+你是内容创作部的大纲与世界观架构负责人。
 
 ## 使命
 
