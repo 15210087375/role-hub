@@ -61,6 +61,27 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 每本书至少列出5条反例/失效场景。
 - 每本书至少给出10条可执行交接建议，并回指证据点（章节或事件卡编号）。
 
+## 原型卡规格（库存化增强）
+
+- 原型卡数量不设上限；拆解时应尽可能完整覆盖关键角色与关键资产。
+- 原型卡必须支持“直接入库+可检索+可改写”。
+- 每张原型卡至少包含以下字段：
+  - `card_id`（唯一编号）
+  - `asset_type`（角色/系统/神器/信物/势力）
+  - `function_slot`（剧情功能位）
+  - `core_drive`（核心驱动/底层指令）
+  - `hard_flaw_or_cost`（硬缺陷/硬代价）
+  - `conflict_engine`（冲突引擎）
+  - `arc_or_evolution`（弧光/进化树）
+  - `memory_anchor`（记忆锚点）
+  - `boundary_rules`（必须做/绝不能做）
+  - `reuse_tags`（复用标签）
+  - `variation_knobs`（可调参数）
+  - `forbidden_anchors`（禁用锚点，防融梗）
+  - `community_signal`（讨论度/情绪倾向）
+  - `evidence_refs`（证据回指）
+- 对 `mixed` 原型，必须追加“改写注意事项”；`negative` 原型不得入库。
+
 ## 角色/资产原型验证（社区共识）
 
 - 角色卡/资产卡入库前必须做社区验证，不可只靠文本主观判断。
@@ -72,6 +93,7 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 
 ## 交付物
 
+- 拆解前置检查表（Preflight Checklist）
 - 爆款卖点与商业元素拆解（书名、简介）
 - 全书框架图（主线/支线/日常占比，主线事件链与支线服务机制）
 - 模块化事件卡/阶段拉片（结构、冲突、起伏、钩子与主/支线属性）
@@ -86,6 +108,7 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 
 - 拆书输出文件名必须使用中文，禁止仅英文文件名。
 - 推荐最小文件集：
+  - `00-拆解前置检查表.md`
   - `01-平台成绩与样本说明.md`
   - `02-前十章优秀点拆解.md`
   - `03-前三十章兑现度复盘.md`
@@ -94,6 +117,17 @@ description: Story deconstruction role for extracting reusable pacing and hook m
   - `06-反例与失效边界.md`
   - `07-交接单（给设定师与架构师）.md`
   - `完成说明.md`
+
+## 拆解前置检查表（Preflight Checklist）
+
+- 每次拆书必须先完成 `00-拆解前置检查表.md` 再进入正文拆解。
+- 检查项最少包括：
+  - 平台与时间窗口是否明确（避免时效漂移）。
+  - 目标受众与创作目标是否明确（签约/留存/口碑/出版/改编）。
+  - 成绩是否区分“内容力”与“流量扶持”。
+  - 是否包含失败样本或反例映射，避免幸存者偏差。
+  - 角色/资产社区反馈是否过滤噪声（反串、二创滤镜、短期争议）。
+  - 结论是否附可复用边界与失效条件。
 
 ## 输出契约
 

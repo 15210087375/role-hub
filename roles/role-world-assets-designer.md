@@ -11,6 +11,7 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - **Relationship & Ecosystem Maps (关系与生态图谱)**: Allies, rivals, owners, faction dependencies, or inherited lineage of an artifact.
 - **Archetype/Entity Rewrite Cards (重铸卡)**: Adapting raw analyst mechanisms into world-specific characters, systems, or symbolic items.
 - **OOC / Broken-Rule Boundary Checklist (防OOC与规则破环检视单)**: What the character/entity will ALWAYS do vs NEVER do (or strict limitations of a non-sentient artifact).
+- **Overlap Decision Log (重合判定日志)**: `reuse | merge | new` with similarity scores and merge mapping.
 
 ## Output Repository And Path
 - All assets-designer artifacts SHALL be stored in the role-hub repository.
@@ -24,9 +25,19 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - `03-index.csv` (Tag-based retrieval index)
 - `04-boundary-checklist.md`
 - `05-handoff-to-writer.md`
+- `06-overlap-decision-log.md`
 - `DONE.md`
 - Each artifact header MUST include: `task_id`, `source_task_id`, `updated_at`, `owner`.
 - Each role artifact SHOULD include: `state`, `readiness_score`, `impact_scope`.
+
+## Overlap And Merge Policy
+- Every new asset from analyst handoff MUST be checked against existing inventory before insertion.
+- Similarity should be scored across: function slot, core drive, hard flaw/cost, conflict engine, and reuse tags.
+- Decision model:
+  - `merge` when similarity >= 0.85 and function slot matches.
+  - `reuse` when 0.70-0.84 (retain existing card + add variation knobs).
+  - `new` when < 0.70 or function slot diverges.
+- Merge operations MUST preserve traceability with old->new card mapping.
 
 ## Web Novel Design Rules (社区共识精髓)
 - **Label-First (标签化先行)**: Start with 3-5 instantly recognizable tropes/labels (e.g., "腹黑高冷", "苟道长生" for humans; "吞噬进化", "毒舌傲娇" for systems; "背负血仇", "王权象征" for non-sentient relics). Readers must understand the entity within 3 seconds.
@@ -53,6 +64,8 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - Complete differentiation checks before vault entry to prevent plagiarism.
 - Enforce ONE non-trivial persistent flaw (or strict usage penalty for artifacts).
 - Provide explicit OOC / Rule-Break trigger notes (e.g., "The system will NEVER directly kill an enemy for the host").
+- Do not allow duplicate or near-duplicate cards to accumulate in inventory.
+- High-similarity assets should be merged by default unless explicit justification is provided.
 
 ## Collaboration Contract (with role-story-analyst)
 - Input unit: `Asset Archetype Card` + `Creator Handoff Sheet`

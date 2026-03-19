@@ -23,6 +23,7 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Artifacts MUST NOT be scattered across ad-hoc folders.
 
 ## Minimum Artifact Set
+- `00-拆解前置检查表.md` (platform/time/audience/goal assumptions and risk checks)
 - `01-平台成绩与样本说明.md` (platform performance evidence and sample scope)
 - `02-前十章优秀点拆解.md` (chapter-level deconstruction for first 10 chapters)
 - `03-前三十章兑现度复盘.md` (payoff continuity through first 30 chapters)
@@ -42,6 +43,26 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Archetypes: >= 3 character archetypes + >= 2 non-human asset archetypes per book.
 - Counterexamples: >= 5 failure scenarios per book.
 - Actionable handoff: >= 10 concrete recommendations with evidence references.
+
+## Archetype Inventory Specification
+- Archetype count has no hard upper limit; prioritize coverage completeness over cap.
+- Every accepted archetype card MUST include:
+  - `card_id`, `asset_type`, `function_slot`
+  - `core_drive`, `hard_flaw_or_cost`, `conflict_engine`
+  - `arc_or_evolution`, `memory_anchor`, `boundary_rules`
+  - `reuse_tags`, `variation_knobs`, `forbidden_anchors`
+  - `community_signal` and `evidence_refs`
+- `mixed` archetypes require rewrite cautions; `negative` archetypes must be excluded from reusable inventory.
+
+## Preflight Checklist Requirement
+- Every deconstruction MUST start with `00-拆解前置检查表.md`.
+- Mandatory checks include:
+  - platform and time-window validity
+  - audience segment and target objective clarity
+  - separation of content strength vs traffic/support effects
+  - anti-survivorship-bias controls (counterexamples or failed samples)
+  - community signal noise filtering (bait/brigading/fandom-only effects)
+  - explicit applicability boundaries and failure conditions
 
 ## Archetype Validation Gate
 - Archetypes MUST be community-validated before entering reusable pool.
