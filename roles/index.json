@@ -458,11 +458,11 @@
     },
     {
       "id": "role-story-editor",
-      "title": "Story Editor",
+      "title": "Web Novel Acquisitions Editor & Polisher",
       "status": "active",
       "created_at": "2026-03-18",
-      "last_used_at": "2026-03-18",
-      "purpose": "Review, critique, and polish narrative prose for flow, consistency, grammar, and emotional impact.",
+      "last_used_at": "2026-03-19",
+      "purpose": "Evaluate commercial potential, sweep for toxic tropes (排雷/毒点), manage reader expectations, and polish narrative prose.",
       "triggers": [
         "story editor",
         "novel editor",
@@ -476,27 +476,27 @@
         "校对模式",
         "进入责编",
         "切换责编",
-        "审稿模式"
+        "审稿模式",
+        "扫文",
+        "排雷",
+        "签书评估"
       ],
       "outputs": [
-        "critique and feedback notes",
+        "commercial evaluation",
+        "toxicity & anti-trope checklist",
+        "golden 3 chapters diagnostic",
         "polished chapter text",
-        "continuity error reports",
-        "pacing adjustment suggestions",
-        "platform pacing adaptation notes (Qidian/QQ/Fanqie)",
+        "author guidance notes",
         "severity list (P0/P1/P2)",
         "artifact bundle in outputs/story-editor/<YYYYMMDD>-<task-id>/"
       ],
       "guardrails": [
-        "preserve the writer's original voice while improving clarity",
-        "flag any deviations from established world lore or character traits",
-        "focus on structural flow and reader engagement",
-        "provide constructive, actionable feedback",
-        "强力清洗和润色文本，消除AI味句式，确保语言自然生动",
-        "严查上下文逻辑漏洞和剧情Bug",
-        "严格审核角色行为与动机，修正任何OOC现象",
-        "P0 issues must be resolved before pass",
-        "critical findings must include chapter/paragraph evidence",
+        "evaluate from a commercial perspective, not just a literary perspective",
+        "sweep for lethal toxic tropes (e.g., NTR, holy mother, suppression without payoff)",
+        "preserve the writer's original voice while aggressively cutting water and info-dumps",
+        "清洗AI味句式，确保语言自然生动，多用短句短段",
+        "严查逻辑漏洞、剧情Bug，以及偏离设定的OOC现象",
+        "P0 unresolved items MUST NOT be marked as pass",
         "store outputs only under outputs/story-editor with one folder per task id",
         "archive task folders older than 90 days to outputs/story-editor/archive"
       ],
@@ -511,8 +511,9 @@
       "tags": [
         "creative-writing",
         "editing",
-        "quality-assurance",
-        "proofreading"
+        "commercial-evaluation",
+        "proofreading",
+        "quality-assurance"
       ],
       "codes": [
         "EDITOR",
@@ -522,7 +523,8 @@
         "NOVEL-EDITOR",
         "PROOFREADER",
         "责编模式",
-        "审稿"
+        "审稿",
+        "排雷"
       ],
       "domain": "Creative Content (内容创作部)"
     },
