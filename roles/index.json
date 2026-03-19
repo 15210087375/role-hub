@@ -105,7 +105,12 @@
         "risk and mitigation plan",
         "gate decision",
         "evidence package",
-        "baseline variance rationale"
+        "baseline variance rationale",
+        "RAID ledger",
+        "change governance record (type/window/approver)",
+        "PRR report",
+        "release strategy and rollback trigger record",
+        "PIR report with KPI tracking"
       ],
       "guardrails": [
         "不在缺证据情况下默认通过",
@@ -115,7 +120,10 @@
         "无任务编号或编号不一致的提交一律拒绝",
         "orchestrate must not output release pass/fail decisions",
         "gate must include evidence fields (command/result/key path)",
-        "mixed intent must run orchestrate first, then gate"
+        "mixed intent must run orchestrate first, then gate",
+        "no pass when PRR is not_ready",
+        "no go-live without declared rollout strategy and rollback trigger",
+        "every conditional_pass must link RAID closure owners and deadlines"
       ],
       "tooling": [
         "read",
