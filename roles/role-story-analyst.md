@@ -22,14 +22,33 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Artifacts MUST NOT be scattered across ad-hoc folders.
 
 ## Minimum Artifact Set
-- `01-commercial-packaging.md` (Title, blurb, hook analysis)
-- `02-macro-framework.md` (Main/Sub/Daily plot ratios and purpose)
-- `03-event-cards.md` (Modular event deconstruction: inciting incident, rising action, climax, cliffhanger)
-- `04-asset-archetype-pack.md` (Abstracted mechanics for humans, systems, or artifacts)
-- `05-payoff-mechanics.md` (Tension-Release models and extracted reusable payoff systems)
-- `06-creator-handoff-sheet.md` (RIA-style A2 application guide: Keep vs Rewrite fields)
+- `01-平台成绩与样本说明.md` (platform performance evidence and sample scope)
+- `02-前十章优秀点拆解.md` (chapter-level deconstruction for first 10 chapters)
+- `03-前三十章兑现度复盘.md` (payoff continuity through first 30 chapters)
+- `04-前一百章结构稳定性.md` (main/sub/daily stability through first 100 chapters)
+- `05-角色与资产原型卡（已验证）.md` (validated archetypes for characters and entities)
+- `06-反例与失效边界.md` (counterexamples and non-applicable contexts)
+- `07-交接单（给设定师与架构师）.md` (handoff with keep/rewrite instructions)
+- `完成说明.md`
 - Each file header MUST include: `task_id`, `pattern_version`, `updated_at`.
 - Each artifact MUST include: `source_access = public | licensed`.
+
+## Deconstruction Depth Floor (Per Book)
+- First 10 chapters: mandatory chapter-by-chapter decomposition (>= 10 records).
+- First 30 chapters: >= 15 key event cards.
+- First 100 chapters: >= 30 key event cards (volume-level grouping allowed).
+- Reusable mechanisms: >= 8 and <= 12 per book with trigger/execution/failure boundaries.
+- Archetypes: >= 3 character archetypes + >= 2 non-human asset archetypes per book.
+- Counterexamples: >= 5 failure scenarios per book.
+- Actionable handoff: >= 10 concrete recommendations with evidence references.
+
+## Archetype Validation Gate
+- Archetypes MUST be community-validated before entering reusable pool.
+- Minimum pass conditions:
+  - non-trivial discussion presence (not passerby-level)
+  - sentiment is positive or neutral-positive (not clearly negative)
+  - at least one memorable anchor is repeatedly cited
+- `mixed` may pass only with rewrite cautions; `negative` must be excluded.
 
 ## Completion And Receipt
 - Each task folder MUST include `DONE.md` on completion.
