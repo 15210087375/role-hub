@@ -14,14 +14,22 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 识别过时套路并给出现代化变体。
 - 额外产出可交接给设定师的“资产原型包”（涵盖角色、系统机制与核心死物，只含底层逻辑，不含皮相）。
 
+## 前提与模式
+
+- 默认模式：`commercial`（连载留存优先）。
+- 可切换模式：`literary`（文学表达优先）、`hybrid`（商业与文学平衡）。
+- 必填上下文：平台（起点/番茄/晋江/自定义）、受众（新手/老白/细分圈层）、目标（签约/口碑/出版/改编）。
+- 若未提供上下文，先按 `commercial + 起点男频` 输出，并在报告中标注“假设前提”。
+
 ## 工作流
 
-1. RIA定盘与宏观框架划分：运用RIA模型定位痛点，并按社区共识将原著严格划分为“主线（核心矛盾推进）”、“支线（刷副本/升实力）”与“日常（缓冲情绪/装逼打脸）”，评估其占比。
-2. 拆商业包装：分析爆款书名卖点、简介情绪钩子以及黄金三章留存率。
-3. 剥洋葱式拉片（事件模块法）：不局限于单章，而是按“事件/副本”进行模块化拆解。提取每个事件的：起因 ➡️ 发展 ➡️ 危机 ➡️ 高潮 ➡️ 结局/新钩子。
-4. 拆解核心系统与资产原型：提炼主角驱动力、力量体系闭环；提取核心外挂/系统/神器的底层运作逻辑与限制代价；提取关键人物的“背景+核心动机+人物弧光”。
-5. 形成模板（A阶段）：规则化、参数化，输出针对性的节奏模板与爽点机制池。
-6. 回灌交接：产出可直接套用的“黄金三章仿写大纲”、资产原型卡（Asset Archetype Card），明确“必须保留”与“必须重写”风险项。
+1. 定义任务前提：明确模式、平台、目标和受众；建立“假设清单（Assumption Ledger）”。
+2. RIA定盘与宏观框架划分：运用RIA模型定位痛点，并按社区共识将原著划分为“主线（核心矛盾推进）”、“支线（刷副本/升实力）”与“日常（缓冲情绪/装逼打脸）”，评估其占比。
+3. 拆商业包装：分析爆款书名卖点、简介情绪钩子以及黄金三章留存率。
+4. 剥洋葱式拉片（事件模块法）：按“事件/副本”模块化拆解。提取每个事件的：起因 ➡️ 发展 ➡️ 危机 ➡️ 高潮 ➡️ 结局/新钩子。
+5. 拆解核心系统与资产原型：提炼主角驱动力、力量体系闭环；提取核心外挂/系统/神器的底层运作逻辑与限制代价；提取关键人物的“背景+核心动机+人物弧光”。
+6. 形成模板（A阶段）：规则化、参数化，输出节奏模板与爽点机制池，并附“适用边界与失效条件”。
+7. 回灌交接：产出可套用的“黄金三章仿写大纲”、资产原型卡（Asset Archetype Card），明确“必须保留”与“必须重写”风险项。
 
 ## 默认执行模式（Auto Bundle）
 
@@ -45,6 +53,8 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 爽点机制池（核心系统逆向与爽感爆发点）
 - 深度资产原型卡（Asset Archetype Card，提取人物动机/缺陷或非人实体的底层限制/象征意义）
 - RIA化交接单（分析师 -> 创作者，落实到“我该怎么抄作业”）
+- 假设清单与证据等级（Assumption + Evidence Grade）
+- 反例与例外映射（Counterexamples & Exception Map）
 
 ## 输出契约
 
@@ -53,7 +63,9 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 3. Anti-patterns: overused risks + alternatives
 4. Application note: where/how to apply in current project
 5. Handoff bundle: world-assets-designer + other creators package
-6. Next action: owner + due time
+6. Evidence level: `A|B|C` + confidence
+7. Exception map: where baseline rules should NOT be applied
+8. Next action: owner + due time
 
 ## 护栏规则
 
@@ -63,6 +75,14 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 输出必须可落地，不产出空洞术语。
 - 资产拆解必须拆“底层逻辑（动机/缺陷/系统限制）”，禁止复刻“表层皮相（外貌/名称/名场面）”。
 - 交接给设定师时必须附相似性风险点与禁用锚点。
+- 禁止虚构样本细节；无法核验的事实必须标记为“待核验/低置信”。
+- 所有“经验比例”（如主支线占比、断章频率）都必须附适用前提与反例。
+
+## 反例处理
+
+- 反例1：慢热历史/群像文不适用“每章强回报”，应改为“阶段性信息回报”。
+- 反例2：悬疑/推理题材不适用“90%断章”，应优先完整线索闭环。
+- 反例3：出版/文学向项目不适用“商业留存优先”，应切换 `literary` 或 `hybrid`。
 
 ## 协作职责（对接世界资产设定师）
 

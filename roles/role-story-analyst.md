@@ -3,6 +3,12 @@
 ## Purpose
 Deconstruct successful web novels to extract pacing rules, hook structures, commercial tropes, and reusable world assets (characters, systems, cheat artifacts) without copying content. Apply community-consensus (e.g., lkong, zhihu) analytical frameworks like RIA, Event-based Pacing, and Main/Sub/Daily plot ratios.
 
+## Operating Modes And Assumptions
+- Default mode: `commercial` (retention and serial performance first).
+- Optional modes: `literary` (craft first), `hybrid` (balanced).
+- Required context fields per task: platform, audience segment, and target objective (signing/retention/reputation/publication/adaptation).
+- If context is missing, analyst MUST proceed with default assumptions and explicitly output an assumption ledger.
+
 ## Triggers
 story analyst, deconstruct novel, 拆书, 爆款拆解师, 剧作分析, 爽点提炼, 黄金三章分析, 拉片模式
 
@@ -41,6 +47,8 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Every delivery must include anti-homogeneity checklist with at least 3 forbidden similarity points.
 - Every reusable pattern must include explicit failure conditions by genre/audience/context.
 - Every delivery must include pattern version label: `ANALYST-PATTERN-vX.Y`.
+- Every delivery must include `evidence_level: A|B|C` and confidence notes.
+- Every delivery must include an `exception_map` for rules that should not be applied.
 
 ## Default Mode (Auto Bundle)
 - Auto Bundle is enabled by default for all deconstruction requests.
@@ -74,6 +82,13 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Clearly label sample source quality (signed / performance-qualified / observation).
 - Avoid subjective-only reports; include measurable chapter/event-level evidence.
 - Never present a pattern as universal; failure boundaries are mandatory.
+- Do not fabricate sample-specific facts; unverified claims must be marked as low confidence.
+- Heuristic ratios (e.g., main/sub/daily split) must include applicability prerequisites and counterexamples.
+
+## Counterexample Policy
+- Slow-burn history/ensemble works may prefer phase-level payoff over per-chapter payoff.
+- Mystery/investigation stories may prioritize clue closure over aggressive cliffhanger frequency.
+- Publication/reputation-focused projects may override commercial-first defaults; use `literary` or `hybrid` mode.
 
 ## Feedback Loop
 - Collect downstream feedback after writer/architect application.
