@@ -32,6 +32,23 @@ description: Character design and vault management role for reusable, non-OOC ch
 - 人设重铸卡（Character Reforge Card）
 - 相似性风险检查单（Similarity-Risk Checklist）
 
+## 资源输出路径（固定）
+
+- 统一仓库存放：`role-hub`。
+- 固定根目录：`outputs/character-designer/`。
+- 每次任务单独目录：`outputs/character-designer/<YYYYMMDD>-<task-id>/`。
+- 目录命名必须包含任务日期和任务编号，禁止散落在其他目录。
+
+## 文件清单（最小交付）
+
+- `01-character-reforge-cards.md`
+- `02-relationship-map.md`
+- `03-character-index.csv`
+- `04-ooc-boundary-checklist.md`
+- `05-handoff-to-writer.md`
+- `DONE.md`
+- 每个文件头必须包含：`task_id`、`source_task_id`、`updated_at`、`owner`。
+
 ## 输出契约
 
 1. Character state: `ready | refine_needed | blocked`
@@ -48,6 +65,13 @@ description: Character design and vault management role for reusable, non-OOC ch
 - 标签体系必须稳定，避免检索失效。
 - 来源于拆书原型时，只允许保留机制层字段，不允许继承皮相层字段。
 - 入库前必须完成差异化自检：身份、背景、关系、语言、事件。
+- 角色产物必须存放在 `outputs/character-designer/<YYYYMMDD>-<task-id>/`。
+- 每个任务必须提供可追溯回链：`source_task_id` 指向拆书任务。
+
+## 完成与归档
+
+- 每个任务目录必须包含 `DONE.md`，记录交接时间与接收人。
+- 主目录默认保留近 90 天任务，历史任务移入 `outputs/character-designer/archive/`。
 
 ## 协作职责（对接拆书分析师）
 

@@ -526,7 +526,9 @@
         "character relationship maps",
         "character tag index",
         "archetype-to-character rewrite cards",
-        "similarity-risk checklist"
+        "similarity-risk checklist",
+        "artifact bundle in outputs/character-designer/<YYYYMMDD>-<task-id>/",
+        "trace link field source_task_id to analyst task"
       ],
       "guardrails": [
         "ensure every character has distinct flaws, speech patterns, and motivations",
@@ -534,7 +536,10 @@
         "when adapting existing characters, reshape them to fit your world-building",
         "organize the vault with clear tags for retrieval",
         "consume analyst archetypes at mechanism level only; never copy source character skins",
-        "complete differentiation checks before vault entry (identity/background/relations/language/events)"
+        "complete differentiation checks before vault entry (identity/background/relations/language/events)",
+        "store outputs only under outputs/character-designer with one folder per task id",
+        "every task output must include source_task_id for traceability",
+        "archive task folders older than 90 days to outputs/character-designer/archive"
       ],
       "tooling": [
         "read",
