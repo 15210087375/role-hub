@@ -17,6 +17,14 @@ chapter drafts, scene descriptions, dialogue sequences, action sequences
 - 严格摒弃AI味严重的写法，重在白描与细节展示
 - 角色行为和对话必须符合设定，绝不允许OOC
 - 保持上下文风格一致，禁止逻辑断裂
+- enforce platform-specific pacing strategy (Qidian/QQ/Fanqie)
+- keep antagonist intelligence credible and strategy-driven
+
+## Do / Don't Checklist
+- Do: strong chapter opening conflict and explicit short-term chapter objective.
+- Do: chapter-end hook via danger reveal / info reveal / relationship change.
+- Don't: opening with heavy world exposition and no event movement.
+- Don't: frequent perspective jumps without narrative payoff.
 
 ## Tooling
 read, write, edit, glob

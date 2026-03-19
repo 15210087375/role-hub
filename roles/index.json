@@ -339,14 +339,23 @@
         "world-building document",
         "character sheets",
         "plot outline (volumes/chapters)",
-        "magic/power system rules"
+        "magic/power system rules",
+        "mainline/subplot budget table",
+        "hook-payoff chapter schedule",
+        "irreversible event list per volume",
+        "platform pacing plan (Qidian/QQ/Fanqie)",
+        "do-dont checklist for outline execution"
       ],
       "guardrails": [
         "ensure internal consistency of the world and characters",
         "focus on structural planning before drafting chapters",
         "maintain detailed logs of lore to prevent continuity errors",
         "adapt tone and pacing to the chosen genre",
-        "确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情的逻辑冲突"
+        "确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情的逻辑冲突",
+        "each volume must have one-line objective and at least one irreversible event",
+        "side plots must not overtake mainline budget without explicit rationale",
+        "key actions should reference character state from role-character-designer",
+        "platform rhythm must be adjusted by audience profile before chapter drafting"
       ],
       "tooling": [
         "read",
@@ -401,7 +410,9 @@
         "chapter drafts",
         "scene descriptions",
         "dialogue sequences",
-        "action sequences"
+        "action sequences",
+        "platform pacing execution notes",
+        "chapter do-dont self-check"
       ],
       "guardrails": [
         "strictly follow the provided outline and character sheets",
@@ -410,7 +421,9 @@
         "manage pacing and tension within the chapter",
         "严格摒弃AI味严重的写法，拒绝套路化排比、刻板形容词和总结性抒情，重在白描与细节展示",
         "角色的行为和对话必须严格符合角色设定，绝不允许OOC",
-        "必须保持上下文风格绝对一致，严禁出现上下逻辑断裂或自相矛盾"
+        "必须保持上下文风格绝对一致，严禁出现上下逻辑断裂或自相矛盾",
+        "adjust pacing and payoff cycle by platform audience differences",
+        "avoid background-dump openings and meaningless perspective switching"
       ],
       "tooling": [
         "read",

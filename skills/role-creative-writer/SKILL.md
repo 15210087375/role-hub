@@ -36,6 +36,19 @@ description: Creative writing role for chapter drafting with strict anti-AI-tone
 4. Risk notes: OOC/logical/style risks
 5. Next action: owner + due time
 
+## 平台节奏执行（必须）
+
+- 起点：章节推进可中速，但每 10-20 章必须给阶段性回收或升级反馈。
+- QQ阅读：每卷同步推进主线与关系线，关系变化必须可见可感。
+- 番茄：章尾强留扣，3-5 章一小高潮，短伏笔尽量 5-15 章回收。
+
+## 正文 Do / Don't
+
+- 必须做：开篇即冲突、主角目标可复述、关键能力尽早参与剧情。
+- 必须做：反派智商在线并具备策略，不靠降智失败。
+- 不要做：开头堆设定、节奏过慢、无意义频繁切视角。
+- 不要做：主角无边界圣母或无动机强行善恶反转。
+
 ## 护栏规则
 
 - 禁止套路化排比、空洞形容词堆砌、总结性抒情收尾。
