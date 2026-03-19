@@ -55,7 +55,7 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - Provide explicit OOC / Rule-Break trigger notes (e.g., "The system will NEVER directly kill an enemy for the host").
 
 ## Collaboration Contract (with role-story-analyst)
-- Input unit: `Role Archetype Card` + `Handoff Sheet`
+- Input unit: `Asset Archetype Card` + `Creator Handoff Sheet`
 - World Assets Designer must rewrite: identity/origin, world position, relation/owner network, key events (or inherited history).
 - World Assets Designer must preserve: motivation/flaw/conflict engine/growth arc/core rule.
 - World Assets Designer finalizes and stores `Reforge Card` in vault.
