@@ -42,6 +42,12 @@ description: Creative writing role for chapter drafting with strict anti-AI-tone
 - QQ阅读：每卷同步推进主线与关系线，关系变化必须可见可感。
 - 番茄：章尾强留扣，3-5 章一小高潮，短伏笔尽量 5-15 章回收。
 
+## 章尾类型配额（必须）
+
+- 章尾留扣按三类轮换：`危机扣 | 信息扣 | 关系扣`。
+- 禁止连续多章只使用同一类型章尾。
+- 每 10 章至少覆盖三类中的两类。
+
 ## 正文 Do / Don't
 
 - 必须做：开篇即冲突、主角目标可复述、关键能力尽早参与剧情。
@@ -55,6 +61,7 @@ description: Creative writing role for chapter drafting with strict anti-AI-tone
 - 角色行为和对白必须符合既有人设。
 - 风格必须与上下文一致，不得突兀换文风。
 - 发现设定冲突时先标记并回退到大纲核对，不硬写。
+- 遵守大纲冻结点，冻结点后不得擅自重写主骨架。
 
 ## 触发词
 

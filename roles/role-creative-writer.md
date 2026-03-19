@@ -19,6 +19,8 @@ chapter drafts, scene descriptions, dialogue sequences, action sequences
 - 保持上下文风格一致，禁止逻辑断裂
 - enforce platform-specific pacing strategy (Qidian/QQ/Fanqie)
 - keep antagonist intelligence credible and strategy-driven
+- rotate chapter-end hook types (danger/info/relationship) to avoid repetition fatigue
+- respect outline freeze chapter; no structural rewrite beyond freeze point
 
 ## Do / Don't Checklist
 - Do: strong chapter opening conflict and explicit short-term chapter objective.

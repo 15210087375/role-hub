@@ -15,6 +15,8 @@ world-building document, character sheets, plot outline (volumes/chapters), magi
 - At least one irreversible event per volume is required.
 - Hook and payoff chapters must be mapped with fallback handling for overdue payoffs.
 - Reserve 1-2 revision slots per volume for feedback-driven adjustments.
+- Every volume must define a fallback conflict plan when core hook underperforms.
+- Every volume must define `outline_freeze_chapter` for handoff stability.
 
 ## Platform Rhythm Rules
 - Qidian: medium setup is allowed but core conflict must be established within first 10 chapters.
@@ -35,6 +37,7 @@ world-building document, character sheets, plot outline (volumes/chapters), magi
 - 确保世界观底座和力量体系的底层逻辑严密，从源头上杜绝后续剧情逻辑冲突
 - keep mainline priority over side plots unless variance is justified
 - reference character state from role-character-designer before assigning key actions
+- do not change main skeleton after freeze chapter unless critical logic break is confirmed
 
 ## Tooling
 read, write, edit, glob, grep

@@ -44,6 +44,11 @@ description: Story architecture role for world-building and long-form plot outli
 7. Risk list: continuity risks + mitigation
 8. Next action: owner + due time
 
+## 失败预案栏（每卷必填）
+
+- 每卷必须定义 1 条核心钩子失效时的备用冲突路径。
+- 预案必须包含：触发条件、替代冲突、章节落点、风险代价。
+
 ## 平台节奏分层（必须）
 
 - 起点：允许中速铺垫，但 10 章内必须立主冲突；强化长线升级和地图推进。
@@ -66,6 +71,12 @@ description: Story architecture role for world-building and long-form plot outli
 - 每卷必须有一句话目标，禁止目标模糊。
 - 支线不得挤占主线预算，超配必须说明收益与代价。
 - 关键角色行为必须引用人设状态（active/locked），避免 OOC。
+- 每卷必须预置失败预案，禁止无备选推进路径。
+
+## 交接冻结点
+
+- 每卷必须设定 `outline_freeze_chapter`（大纲冻结章位）。
+- 到达冻结点后，非重大逻辑问题不得改动主骨架。
 
 ## 触发词
 

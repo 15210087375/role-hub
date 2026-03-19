@@ -344,7 +344,8 @@
         "hook-payoff chapter schedule",
         "irreversible event list per volume",
         "platform pacing plan (Qidian/QQ/Fanqie)",
-        "do-dont checklist for outline execution"
+        "do-dont checklist for outline execution",
+        "fallback conflict plan and outline freeze chapter per volume"
       ],
       "guardrails": [
         "ensure internal consistency of the world and characters",
@@ -355,7 +356,9 @@
         "each volume must have one-line objective and at least one irreversible event",
         "side plots must not overtake mainline budget without explicit rationale",
         "key actions should reference character state from role-character-designer",
-        "platform rhythm must be adjusted by audience profile before chapter drafting"
+        "platform rhythm must be adjusted by audience profile before chapter drafting",
+        "each volume must define fallback conflict plan and outline freeze chapter",
+        "main skeleton changes after freeze chapter require critical-issue justification"
       ],
       "tooling": [
         "read",
@@ -412,7 +415,8 @@
         "dialogue sequences",
         "action sequences",
         "platform pacing execution notes",
-        "chapter do-dont self-check"
+        "chapter do-dont self-check",
+        "chapter-end hook rotation notes"
       ],
       "guardrails": [
         "strictly follow the provided outline and character sheets",
@@ -423,7 +427,9 @@
         "角色的行为和对话必须严格符合角色设定，绝不允许OOC",
         "必须保持上下文风格绝对一致，严禁出现上下逻辑断裂或自相矛盾",
         "adjust pacing and payoff cycle by platform audience differences",
-        "avoid background-dump openings and meaningless perspective switching"
+        "avoid background-dump openings and meaningless perspective switching",
+        "rotate danger/info/relationship hooks and avoid single-type overuse",
+        "respect outline freeze chapter and avoid unauthorized structural rewrites"
       ],
       "tooling": [
         "read",
