@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
 from pathlib import Path
 
 
 REQUIRED_KEYWORDS = {
     "role-master": [
-        "文档基线模块",
-        "需求结构化模块",
-        "任务拆解模块",
-        "人员编排模块",
-        "证据审计模块",
-        "门禁裁决模块",
-        "协同看板模块",
+        "orchestrate",
+        "gate",
+        "主理人",
+        "调度编排",
+        "最终验收",
+        "orchestrate must not output release pass/fail decisions",
+        "gate must not skip evidence fields",
     ]
 }
 
@@ -44,7 +45,14 @@ def main() -> int:
             continue
 
         content = skill_file.read_text(encoding="utf-8")
-        missing = [kw for kw in keywords if kw not in content]
+        def norm(s: str) -> str:
+            t = s.lower()
+            t = t.replace("`", "")
+            t = re.sub(r"\s+", " ", t)
+            return t
+
+        ncontent = norm(content)
+        missing = [kw for kw in keywords if norm(kw) not in ncontent]
         item = {
             "role_id": role_id,
             "skill_file": str(skill_file),

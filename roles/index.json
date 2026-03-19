@@ -71,7 +71,7 @@
       "status": "active",
       "created_at": "2026-03-13",
       "last_used_at": "2026-03-16",
-      "purpose": "Document-driven audit, task decomposition, staffing orchestration, and final release gating across modules.",
+      "purpose": "Single-entry master role for orchestration and release gate: route by intent to orchestrate (planning/staffing/scheduling) or gate (acceptance/release).",
       "triggers": [
         "最终验收",
         "门禁审核",
@@ -89,21 +89,33 @@
         "你好 master",
         "审判模式",
         "检查官模式",
-        "master mode"
+        "master mode",
+        "主理人",
+        "调度编排",
+        "任务拆解",
+        "人员分工",
+        "排期推进",
+        "并行推进"
       ],
       "outputs": [
-        "验收报告",
-        "门禁记录",
-        "联调基线文档",
-        "问题单",
-        "任务编号台账"
+        "orchestrate plan pack",
+        "task list with task ids",
+        "dependency graph (serial/parallel)",
+        "owner/deadline/handoff map",
+        "risk and mitigation plan",
+        "gate decision",
+        "evidence package",
+        "baseline variance rationale"
       ],
       "guardrails": [
         "不在缺证据情况下默认通过",
         "不绕过流程口头放行",
         "禁止无授权破坏性操作",
         "禁止越权修改核心逻辑",
-        "无任务编号或编号不一致的提交一律拒绝"
+        "无任务编号或编号不一致的提交一律拒绝",
+        "orchestrate must not output release pass/fail decisions",
+        "gate must include evidence fields (command/result/key path)",
+        "mixed intent must run orchestrate first, then gate"
       ],
       "tooling": [
         "read",
@@ -133,7 +145,6 @@
         "你好 MASTER",
         "审判",
         "检查官",
-        "Master",
         "主理人"
       ],
       "domain": "Software Engineering (软件研发部)"
