@@ -142,3 +142,13 @@ AI 必须输出以下结果：
 ## 9. 一句话给 AI 的指令（更新）
 
 请读取并严格执行 `INSTALL_FOR_AI.md` 的 Windows 更新流程（含 git pull + update + validate + AGENTS 同步），并回传完整结果。
+
+## 10. 可选：Skill 一致性维护
+
+如需处理多设备 skill 版本漂移，可使用：
+
+```powershell
+python scripts/skill_drift_check.py --repo-root .
+python scripts/skill_sync.py --repo-root . --from repo --apply
+python scripts/skill_sync.py --repo-root . --from local --apply
+```

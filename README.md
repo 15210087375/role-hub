@@ -17,3 +17,12 @@ Cross-device role governance and skill execution bundle.
 - `python roles/role_sync.py validate`
 - `python roles/role_sync.py sync`
 - `python roles/role_agents_sync.py`
+
+## Skill Drift Maintenance
+
+- Check drift between repository and local installed skills:
+  - `python scripts/skill_drift_check.py --repo-root .`
+- Sync from repository to local installation (apply):
+  - `python scripts/skill_sync.py --repo-root . --from repo --apply`
+- Sync from local edits back to repository (apply):
+  - `python scripts/skill_sync.py --repo-root . --from local --apply`
