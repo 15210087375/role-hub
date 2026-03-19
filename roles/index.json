@@ -506,7 +506,7 @@
       "status": "active",
       "created_at": "2026-03-18",
       "last_used_at": "2026-03-18",
-      "purpose": "Design, catalog, and maintain a reusable repository of character profiles for novel creation.",
+      "purpose": "Design, catalog, and maintain a reusable repository of character profiles for novel creation, including world-fit rewrites from analyst archetypes.",
       "triggers": [
         "character designer",
         "人设师",
@@ -524,13 +524,17 @@
       "outputs": [
         "structured character profiles",
         "character relationship maps",
-        "character tag index"
+        "character tag index",
+        "archetype-to-character rewrite cards",
+        "similarity-risk checklist"
       ],
       "guardrails": [
         "ensure every character has distinct flaws, speech patterns, and motivations",
         "maintain a standardized character vault template",
         "when adapting existing characters, reshape them to fit your world-building",
-        "organize the vault with clear tags for retrieval"
+        "organize the vault with clear tags for retrieval",
+        "consume analyst archetypes at mechanism level only; never copy source character skins",
+        "complete differentiation checks before vault entry (identity/background/relations/language/events)"
       ],
       "tooling": [
         "read",
@@ -564,7 +568,7 @@
       "status": "active",
       "created_at": "2026-03-18",
       "last_used_at": "2026-03-18",
-      "purpose": "Deconstruct successful web novels to extract pacing rules, hook structures, and commercial tropes without copying content.",
+      "purpose": "Deconstruct successful web novels to extract pacing rules, hook structures, commercial tropes, and reusable character mechanisms without copying content.",
       "triggers": [
         "story analyst",
         "deconstruct novel",
@@ -584,13 +588,18 @@
         "pacing charts",
         "hook and payoff analysis",
         "character arc reverse-engineering",
-        "trope and trope-subversion models"
+        "trope and trope-subversion models",
+        "role archetype pack for character designer handoff",
+        "creator sync pack for architect/writer/editor"
       ],
       "guardrails": [
         "focus on structural mechanics, pacing, and emotional hooks",
         "identify why scenes work rather than copying plot",
         "produce abstract reusable templates and rules",
-        "flag outdated cliches and provide modern subversions"
+        "flag outdated cliches and provide modern subversions",
+        "extract character mechanics, not character skins (name/background/iconic lines)",
+        "provide explicit handoff notes for character designer: keep vs rewrite",
+        "auto bundle is default: always output a minimum handoff-ready package"
       ],
       "tooling": [
         "read",
