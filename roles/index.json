@@ -227,7 +227,11 @@
         "technical notes",
         "delivery checklist",
         "task submission summary",
-        "master review package"
+        "master review package",
+        "security gate report (SAST/SCA/Secrets)",
+        "observability artifacts for critical-path changes",
+        "performance baseline comparison report when applicable",
+        "Definition of Done compliance checklist"
       ],
       "guardrails": [
         "evidence first: commands and outputs are required",
@@ -235,7 +239,11 @@
         "no destructive git operation without explicit approval",
         "no unauthorized contract or core-module changes",
         "every completed task must be submitted to role-master with submitter and content summary",
-        "every artifact must carry role-master issued task id: TASK-YYYYMMDD-XXX"
+        "every artifact must carry role-master issued task id: TASK-YYYYMMDD-XXX",
+        "no pass with unresolved high/critical findings from SAST/SCA/Secrets",
+        "no critical-path delivery without minimum observability artifacts",
+        "no performance optimization claim without before/after benchmark evidence",
+        "task completion requires full Definition of Done compliance"
       ],
       "tooling": [
         "read",
