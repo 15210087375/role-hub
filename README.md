@@ -26,3 +26,8 @@ Cross-device role governance and skill execution bundle.
   - `python scripts/skill_sync.py --repo-root . --from repo --apply`
 - Sync from local edits back to repository (apply):
   - `python scripts/skill_sync.py --repo-root . --from local --apply`
+
+## Role/Skill Alignment Check
+
+- Check key role-to-skill alignment rules:
+  - `python scripts/role_skill_alignment_check.py --repo-root .`

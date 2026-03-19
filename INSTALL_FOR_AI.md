@@ -151,4 +151,5 @@ AI 必须输出以下结果：
 python scripts/skill_drift_check.py --repo-root .
 python scripts/skill_sync.py --repo-root . --from repo --apply
 python scripts/skill_sync.py --repo-root . --from local --apply
+python scripts/role_skill_alignment_check.py --repo-root .
 ```
