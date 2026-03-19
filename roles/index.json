@@ -528,7 +528,9 @@
         "archetype-to-character rewrite cards",
         "similarity-risk checklist",
         "artifact bundle in outputs/character-designer/<YYYYMMDD>-<task-id>/",
-        "trace link field source_task_id to analyst task"
+        "trace link field source_task_id to analyst task",
+        "character lifecycle state (draft/active/locked/archived)",
+        "readiness score and impact scope fields"
       ],
       "guardrails": [
         "ensure every character has distinct flaws, speech patterns, and motivations",
@@ -539,7 +541,13 @@
         "complete differentiation checks before vault entry (identity/background/relations/language/events)",
         "store outputs only under outputs/character-designer with one folder per task id",
         "every task output must include source_task_id for traceability",
-        "archive task folders older than 90 days to outputs/character-designer/archive"
+        "archive task folders older than 90 days to outputs/character-designer/archive",
+        "define one short character hook sentence before full profile drafting",
+        "enforce one persistent flaw and explicit OOC trigger per character",
+        "limit core relationship links to three unless justified",
+        "run identity/relationship/iconic-scene re-skin check before vault entry",
+        "every character update must include impact_scope (chapters/relationships/plotlines)",
+        "use unified lifecycle state and readiness score for handoff decisions"
       ],
       "tooling": [
         "read",

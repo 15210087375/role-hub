@@ -23,6 +23,14 @@ structured character profiles, character relationship maps, character tag index,
 - `05-handoff-to-writer.md`
 - `DONE.md`
 - Each artifact header MUST include: `task_id`, `source_task_id`, `updated_at`, `owner`.
+- Each role artifact SHOULD include: `state`, `readiness_score`, `impact_scope`.
+
+## Character Lifecycle
+- Unified state machine: `draft -> active -> locked -> archived`.
+- `draft` roles are not writer-ready.
+- `active` roles are writer-ready.
+- `locked` roles are frozen during critical arcs and require justification for edits.
+- `archived` roles are retained for traceability and reuse reference only.
 
 ## Guardrails
 - ensure every character has distinct flaws, speech patterns, and motivations
@@ -33,11 +41,24 @@ structured character profiles, character relationship maps, character tag index,
 - complete differentiation checks before vault entry (identity/background/relations/language/events)
 - store outputs only under `outputs/character-designer/<YYYYMMDD>-<task-id>/`
 - include `source_task_id` to keep traceability with analyst task outputs
+- define one short character hook sentence before full profile drafting
+- enforce one non-trivial persistent flaw per character
+- cap core relationship links to 3 by default unless justified
+- provide explicit OOC trigger and avoidance notes
+- run identity/relationship/iconic-scene re-skin check before vault entry
 
 ## Completion And Archival
 - Every task folder MUST include `DONE.md` on completion.
 - Keep active folders for recent 90 days under `outputs/character-designer/`.
 - Move older folders to `outputs/character-designer/archive/` while preserving traceability.
+
+## Change Impact Marking
+- Every character update MUST include `impact_scope`: affected chapters, relationships, and plotlines.
+- If published content is affected, provide revision guidance and risk note.
+
+## Readiness Scoring
+- Every character card SHOULD include `readiness_score` in range `0-100`.
+- Suggested interpretation: `80+` ready for drafting, `60-79` needs refinement, `<60` keep in draft.
 
 ## Collaboration Contract (with role-story-analyst)
 - Input unit: `Role Archetype Card` + `Handoff Sheet`
