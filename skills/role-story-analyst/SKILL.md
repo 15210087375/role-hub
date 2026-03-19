@@ -38,6 +38,36 @@ description: Story deconstruction role for extracting reusable pacing and hook m
   - 交接单（给人设师/架构师/主笔）
 - 若信息不足，先给可执行的 partial 版本，并明确缺口与补采建议。
 
+## 资源输出路径（固定）
+
+- 统一仓库存放：`role-hub`。
+- 固定根目录：`outputs/story-analyst/`。
+- 每次任务单独目录：`outputs/story-analyst/<YYYYMMDD>-<task-id>/`。
+- 目录命名必须包含任务日期和任务编号，禁止散落在其他目录。
+
+## 文件清单（最小交付）
+
+- `01-sample-pool.md`
+- `02-quant-metrics.csv`
+- `03-patterns-and-failures.md`
+- `04-role-archetype-pack.md`
+- `05-handoff-sheet.md`
+- `06-creator-sync-pack.md`
+- 每个文件头必须包含：`task_id`、`pattern_version`、`updated_at`。
+- 每个文件必须标注：`source_access = public | licensed`。
+
+## 任务完成与交接回执
+
+- 每个任务目录完成时必须新增 `DONE.md`。
+- `DONE.md` 最小字段：`task_id`、`delivered_at`、`receiver`、`pattern_version`。
+- 人设师或其他接收角色必须提供交接回执（可写入 `05-handoff-sheet.md` 底部）。
+
+## 归档规则
+
+- 主目录默认仅保留近 90 天任务。
+- 超过 90 天任务移入：`outputs/story-analyst/archive/`。
+- 归档后保留目录结构与关键索引，不删除核心产物文件。
+
 ## 样本池职责（新书口径）
 
 - 新书池只收两类：`已签约新书`、`表现达标的新书`。

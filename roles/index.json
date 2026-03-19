@@ -595,7 +595,9 @@
         "priority tiers (ready_now/adapt_needed/reference_only)",
         "anti-homogeneity checklist (minimum 3 forbidden similarity points)",
         "failure conditions by genre/audience/context",
-        "pattern version label and feedback update note"
+        "pattern version label and feedback update note",
+        "artifact bundle in outputs/story-analyst/<YYYYMMDD>-<task-id>/",
+        "delivery completion file DONE.md with receiver acknowledgment"
       ],
       "guardrails": [
         "focus on structural mechanics, pacing, and emotional hooks",
@@ -609,7 +611,10 @@
         "sample source quality must be labeled in output: signed/performance-qualified/observation",
         "avoid subjective-only reports: include measurable chapter-level evidence",
         "never present a pattern as universal; failure boundaries are mandatory",
-        "maintain sample lifecycle states (in_pool/observe/out_pool) and periodic refresh"
+        "maintain sample lifecycle states (in_pool/observe/out_pool) and periodic refresh",
+        "store outputs only under outputs/story-analyst with one folder per task id",
+        "every artifact must label source_access as public or licensed",
+        "archive task folders older than 90 days to outputs/story-analyst/archive while preserving traceability"
       ],
       "tooling": [
         "read",
