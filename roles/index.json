@@ -482,7 +482,10 @@
         "critique and feedback notes",
         "polished chapter text",
         "continuity error reports",
-        "pacing adjustment suggestions"
+        "pacing adjustment suggestions",
+        "platform pacing adaptation notes (Qidian/QQ/Fanqie)",
+        "severity list (P0/P1/P2)",
+        "artifact bundle in outputs/story-editor/<YYYYMMDD>-<task-id>/"
       ],
       "guardrails": [
         "preserve the writer's original voice while improving clarity",
@@ -491,7 +494,11 @@
         "provide constructive, actionable feedback",
         "强力清洗和润色文本，消除AI味句式，确保语言自然生动",
         "严查上下文逻辑漏洞和剧情Bug",
-        "严格审核角色行为与动机，修正任何OOC现象"
+        "严格审核角色行为与动机，修正任何OOC现象",
+        "P0 issues must be resolved before pass",
+        "critical findings must include chapter/paragraph evidence",
+        "store outputs only under outputs/story-editor with one folder per task id",
+        "archive task folders older than 90 days to outputs/story-editor/archive"
       ],
       "tooling": [
         "read",
