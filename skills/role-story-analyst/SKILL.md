@@ -44,6 +44,13 @@ description: Story deconstruction role for extracting reusable pacing and hook m
   - 创作交接单（给架构师/主笔的A2应用步骤）
 - 若信息不足，先给可执行的 partial 版本，并明确缺口与补采建议。
 
+## 存储规则（强制）
+
+- 每本拆解书籍必须放入独立文件夹。
+- 文件夹名称必须使用书名（优先中文原名）。
+- 固定根目录：`outputs/story-analyst/<书名>/`。
+- 禁止继续使用 `<日期>-<task-id>` 作为拆书目录名。
+
 ## 拆解深度下限（每本书强制）
 
 - 前10章：必须逐章拆解，至少10条事件记录。

@@ -18,7 +18,8 @@ pacing charts (including event cards and tension curves), macro framework mappin
 ## Output Repository And Path
 - All analyst artifacts SHALL be stored in the role-hub repository.
 - Fixed root path: `outputs/story-analyst/`.
-- Task folder format: `outputs/story-analyst/<YYYYMMDD>-<task-id>/`.
+- One-book-one-folder rule: each analyzed book MUST use a dedicated folder named by the book title (Chinese title preferred).
+- Task folder format: `outputs/story-analyst/<书名>/`.
 - Artifacts MUST NOT be scattered across ad-hoc folders.
 
 ## Minimum Artifact Set
