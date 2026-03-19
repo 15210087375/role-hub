@@ -1,0 +1,670 @@
+#!/usr/bin/env python3
+"""
+人格记忆系统 - 核心引擎
+实现分层沉淀、配置管理、迁移同步等功能
+"""
+
+import os
+import sys
+import json
+import yaml
+import hashlib
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Any, Tuple
+import re
+
+class PersonaMemoryCore:
+    """人格记忆系统核心类"""
+    
+    def __init__(self, memory_root: str = ""):
+        """初始化记忆系统"""
+        if not memory_root:
+            memory_root = os.path.join(os.path.expanduser("~"), ".persona-memory")
+        
+        self.memory_root = memory_root
+        self._ensure_directories()
+        self._load_configs()
+        
+        # 当前会话信息
+        self.session_id = self._generate_session_id()
+        self.current_conversation = None
+        
+        print(f"人格记忆系统初始化完成")
+        print(f"记忆根目录: {self.memory_root}")
+        print(f"会话ID: {self.session_id}")
+    
+    def _ensure_directories(self):
+        """确保所有目录存在"""
+        directories = [
+            "Memory",
+            "Intent", 
+            "Meta/复盘记录",
+            "Config",
+            "Migration",
+            "Backups/daily",
+            "Backups/weekly",
+            "Backups/versioned"
+        ]
+        
+        for dir_path in directories:
+            full_path = os.path.join(self.memory_root, dir_path)
+            os.makedirs(full_path, exist_ok=True)
+    
+    def _load_configs(self):
+        """加载配置文件"""
+        self.configs = {}
+        config_files = [
+            ("路径配置", "Config/路径配置.yaml"),
+            ("设备配置", "Config/设备配置.yaml"),
+            ("工具配置", "Config/工具配置.yaml"),
+            ("工作流配置", "Config/工作流配置.yaml"),
+            ("同步配置", "Config/同步配置.yaml"),
+            ("存储配置", "Config/存储配置.yaml")
+        ]
+        
+        for name, rel_path in config_files:
+            file_path = os.path.join(self.memory_root, rel_path)
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        self.configs[name] = yaml.safe_load(f)
+                except Exception as e:
+                    print(f"加载配置文件 {name} 失败: {e}")
+                    self.configs[name] = {}
+            else:
+                self.configs[name] = {}
+                print(f"配置文件不存在: {file_path}")
+    
+    def _generate_session_id(self) -> str:
+        """生成会话ID"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        random_hash = hashlib.md5(timestamp.encode()).hexdigest()[:8]
+        return f"session_{timestamp}_{random_hash}"
+    
+    def update_config(self, config_name: str, key_path: str, value: Any):
+        """更新配置"""
+        if config_name not in self.configs:
+            print(f"配置不存在: {config_name}")
+            return False
+        
+        # 解析键路径（支持嵌套）
+        keys = key_path.split('.')
+        config = self.configs[config_name]
+        
+        # 遍历到最后一个键的父级
+        for key in keys[:-1]:
+            if key not in config:
+                config[key] = {}
+            config = config[key]
+        
+        # 设置值
+        last_key = keys[-1]
+        config[last_key] = value
+        
+        # 保存到文件
+        config_file = os.path.join(self.memory_root, f"Config/{config_name}.yaml")
+        try:
+            with open(config_file, 'w', encoding='utf-8') as f:
+                yaml.dump(self.configs[config_name], f, allow_unicode=True, default_flow_style=False)
+            print(f"配置已更新: {config_name}.{key_path} = {value}")
+            return True
+        except Exception as e:
+            print(f"保存配置失败: {e}")
+            return False
+    
+    def get_config(self, config_name: str, key_path: str = None) -> Any:
+        """获取配置"""
+        if config_name not in self.configs:
+            return None
+        
+        if key_path is None:
+            return self.configs[config_name]
+        
+        # 解析键路径
+        keys = key_path.split('.')
+        config = self.configs[config_name]
+        
+        try:
+            for key in keys:
+                config = config[key]
+            return config
+        except (KeyError, TypeError):
+            return None
+    
+    def start_conversation(self, context: str = None):
+        """开始新的对话"""
+        self.current_conversation = {
+            "id": self._generate_conversation_id(),
+            "start_time": datetime.now().isoformat(),
+            "context": context,
+            "messages": [],
+            "layers": {
+                "L0": None,
+                "L1": None,
+                "L2": None,
+                "L3": None,
+                "L4": None
+            }
+        }
+        print(f"开始对话: {self.current_conversation['id']}")
+        return self.current_conversation['id']
+    
+    def _generate_conversation_id(self) -> str:
+        """生成对话ID"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        random_hash = hashlib.md5(timestamp.encode()).hexdigest()[:6]
+        return f"conv_{timestamp}_{random_hash}"
+    
+    def add_message(self, role: str, content: str):
+        """添加消息到当前对话"""
+        if self.current_conversation is None:
+            self.start_conversation()
+        
+        message = {
+            "role": role,
+            "content": content,
+            "timestamp": datetime.now().isoformat(),
+            "message_id": len(self.current_conversation["messages"])
+        }
+        
+        self.current_conversation["messages"].append(message)
+        
+        # 实时分析（简化版）
+        if role == "user":
+            self._analyze_user_message(content)
+        
+        return message
+    
+    def _analyze_user_message(self, content: str):
+        """分析用户消息（简化版）"""
+        # L1: 情境分析
+        context_type = self._detect_context_type(content)
+        emotional_tone = self._detect_emotional_tone(content)
+        
+        self.current_conversation["layers"]["L1"] = {
+            "context_type": context_type,
+            "emotional_tone": emotional_tone,
+            "analysis_time": datetime.now().isoformat()
+        }
+        
+        # L2: 行为分析
+        question_pattern = self._detect_question_pattern(content)
+        word_preferences = self._extract_word_preferences(content)
+        
+        self.current_conversation["layers"]["L2"] = {
+            "question_pattern": question_pattern,
+            "word_preferences": word_preferences,
+            "analysis_time": datetime.now().isoformat()
+        }
+        
+        print(f"消息分析完成: L1={context_type}, L2={question_pattern}")
+    
+    def _detect_context_type(self, content: str) -> str:
+        """检测对话情境类型"""
+        content_lower = content.lower()
+        
+        # 技术相关
+        tech_keywords = ["代码", "编程", "python", "java", "算法", "数据库", "api", "接口"]
+        if any(keyword in content_lower for keyword in tech_keywords):
+            return "technical_discussion"
+        
+        # 学习相关
+        learn_keywords = ["学习", "教程", "如何", "怎么", "理解", "解释"]
+        if any(keyword in content_lower for keyword in learn_keywords):
+            return "learning_inquiry"
+        
+        # 决策相关
+        decision_keywords = ["选择", "决定", "应该", "建议", "推荐", "哪个更好"]
+        if any(keyword in content_lower for keyword in decision_keywords):
+            return "decision_making"
+        
+        # 规划相关
+        planning_keywords = ["计划", "安排", "下一步", "未来", "目标", "规划"]
+        if any(keyword in content_lower for keyword in planning_keywords):
+            return "planning"
+        
+        # 思考相关
+        thinking_keywords = ["思考", "想法", "观点", "看法", "认为", "觉得"]
+        if any(keyword in content_lower for keyword in thinking_keywords):
+            return "reflective_thinking"
+        
+        return "general_conversation"
+    
+    def _detect_emotional_tone(self, content: str) -> str:
+        """检测情感基调"""
+        content_lower = content.lower()
+        
+        # 积极情感
+        positive_words = ["谢谢", "感谢", "很好", "优秀", "完美", "太棒了"]
+        if any(word in content_lower for word in positive_words):
+            return "positive"
+        
+        # 消极情感
+        negative_words = ["问题", "错误", "失败", "不好", "困难", "麻烦", "糟糕"]
+        if any(word in content_lower for word in negative_words):
+            return "negative"
+        
+        # 疑问
+        question_words = ["吗", "？", "?", "为什么", "怎么", "如何"]
+        if any(word in content_lower for word in question_words):
+            return "inquisitive"
+        
+        # 指令性
+        imperative_words = ["请", "帮我", "需要", "要求", "必须", "应该"]
+        if any(word in content_lower for word in imperative_words):
+            return "directive"
+        
+        return "neutral"
+    
+    def _detect_question_pattern(self, content: str) -> str:
+        """检测提问模式"""
+        content_lower = content.lower()
+        
+        # 开放式问题
+        if any(opener in content_lower for opener in ["什么是", "为什么", "如何", "怎么", "哪些"]):
+            return "open_ended"
+        
+        # 封闭式问题
+        if any(closer in content_lower for closer in ["是吗", "对吗", "可以吗", "行吗", "好不好"]):
+            return "closed_ended"
+        
+        # 比较式问题
+        if "还是" in content_lower or "哪个更好" in content_lower:
+            return "comparative"
+        
+        # 步骤式问题
+        if any(step in content_lower for step in ["第一步", "首先", "然后", "接着", "最后"]):
+            return "step_by_step"
+        
+        return "general_inquiry"
+    
+    def _extract_word_preferences(self, content: str) -> List[str]:
+        """提取用词偏好"""
+        preferences = []
+        
+        # 技术术语偏好
+        tech_terms = ["API", "接口", "数据库", "算法", "架构", "部署", "调试"]
+        for term in tech_terms:
+            if term in content:
+                preferences.append(f"tech_term:{term}")
+        
+        # 英文词汇使用
+        english_words = re.findall(r'\b[A-Za-z]+\b', content)
+        if len(english_words) > 3:
+            preferences.append("prefers_english_terms")
+        
+        # 专业程度
+        professional_words = ["综上所述", "本质上", "实际上", "理论上", "实践中"]
+        if any(word in content for word in professional_words):
+            preferences.append("professional_tone")
+        
+        return preferences
+    
+    def end_conversation(self, save: bool = True):
+        """结束当前对话"""
+        if self.current_conversation is None:
+            print("没有进行中的对话")
+            return None
+        
+        self.current_conversation["end_time"] = datetime.now().isoformat()
+        self.current_conversation["duration_seconds"] = (
+            datetime.fromisoformat(self.current_conversation["end_time"]) - 
+            datetime.fromisoformat(self.current_conversation["start_time"])
+        ).total_seconds()
+        
+        if save:
+            self._save_conversation()
+        
+        conversation_id = self.current_conversation["id"]
+        self.current_conversation = None
+        
+        print(f"对话结束: {conversation_id}")
+        return conversation_id
+    
+    def _save_conversation(self):
+        """保存对话到文件"""
+        if self.current_conversation is None:
+            return
+        
+        # 保存L0原始记录
+        conv_id = self.current_conversation["id"]
+        l0_file = os.path.join(self.memory_root, f"Memory/L0_状态层/{conv_id}.json")
+        
+        try:
+            with open(l0_file, 'w', encoding='utf-8') as f:
+                json.dump(self.current_conversation, f, ensure_ascii=False, indent=2)
+            print(f"对话已保存: {l0_file}")
+        except Exception as e:
+            print(f"保存对话失败: {e}")
+        
+        # 更新L1-L4层（简化版，实际需要更复杂的分析）
+        self._update_memory_layers()
+    
+    def _update_memory_layers(self):
+        """更新记忆层（简化版）"""
+        conv_id = self.current_conversation["id"]
+        
+        # L1: 情境层
+        l1_data = self.current_conversation["layers"]["L1"]
+        if l1_data:
+            self._append_to_layer("L1_情境层", conv_id, l1_data)
+        
+        # L2: 行为层
+        l2_data = self.current_conversation["layers"]["L2"]
+        if l2_data:
+            self._append_to_layer("L2_行为层", conv_id, l2_data)
+        
+        # L3和L4需要更长时间的分析，这里先占位
+        # 实际实现中需要聚合多个对话进行分析
+    
+    def _append_to_layer(self, layer_name: str, conv_id: str, data: Dict):
+        """追加数据到记忆层"""
+        layer_file = os.path.join(self.memory_root, f"Memory/{layer_name}.yaml")
+        
+        # 加载现有数据
+        layer_data = []
+        if os.path.exists(layer_file):
+            try:
+                with open(layer_file, 'r', encoding='utf-8') as f:
+                    layer_data = yaml.safe_load(f) or []
+            except Exception:
+                layer_data = []
+        
+        # 添加新数据
+        entry = {
+            "conversation_id": conv_id,
+            "timestamp": datetime.now().isoformat(),
+            "data": data
+        }
+        layer_data.append(entry)
+        
+        # 保存
+        try:
+            with open(layer_file, 'w', encoding='utf-8') as f:
+                yaml.dump(layer_data, f, allow_unicode=True, default_flow_style=False)
+        except Exception as e:
+            print(f"保存{layer_name}失败: {e}")
+    
+    def add_intent(self, intent_type: str, content: str, priority: str = "medium"):
+        """添加意图（主动输入）"""
+        intent_file = os.path.join(self.memory_root, f"Intent/{intent_type}.yaml")
+        
+        # 加载现有意图
+        intents = []
+        if os.path.exists(intent_file):
+            try:
+                with open(intent_file, 'r', encoding='utf-8') as f:
+                    intents = yaml.safe_load(f) or []
+            except Exception:
+                intents = []
+        
+        # 添加新意图
+        intent = {
+            "id": self._generate_intent_id(),
+            "content": content,
+            "priority": priority,
+            "created_at": datetime.now().isoformat(),
+            "status": "active"
+        }
+        intents.append(intent)
+        
+        # 保存
+        try:
+            with open(intent_file, 'w', encoding='utf-8') as f:
+                yaml.dump(intents, f, allow_unicode=True, default_flow_style=False)
+            print(f"意图已添加: {intent_type} - {content[:50]}...")
+            return intent["id"]
+        except Exception as e:
+            print(f"添加意图失败: {e}")
+            return None
+    
+    def _generate_intent_id(self) -> str:
+        """生成意图ID"""
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        random_hash = hashlib.md5(timestamp.encode()).hexdigest()[:4]
+        return f"intent_{timestamp}_{random_hash}"
+    
+    def export_memory(self, output_path: str, include_layers: List[str] = None):
+        """导出记忆库"""
+        if include_layers is None:
+            include_layers = ["all"]
+        
+        export_data = {
+            "export_time": datetime.now().isoformat(),
+            "system_version": "1.0.0",
+            "memory_root": self.memory_root,
+            "configs": self.configs,
+            "included_layers": include_layers
+        }
+        
+        # 导出配置
+        export_data["configs"] = self.configs
+        
+        # 导出记忆层
+        if "all" in include_layers or "memory" in include_layers:
+            export_data["memory_layers"] = self._export_memory_layers(include_layers)
+        
+        # 导出意图
+        if "all" in include_layers or "intent" in include_layers:
+            export_data["intents"] = self._export_intents()
+        
+        # 保存到文件
+        try:
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(export_data, f, ensure_ascii=False, indent=2)
+            print(f"记忆库已导出到: {output_path}")
+            return True
+        except Exception as e:
+            print(f"导出失败: {e}")
+            return False
+    
+    def _export_memory_layers(self, include_layers: List[str]) -> Dict:
+        """导出记忆层"""
+        layers = {}
+        
+        layer_files = {
+            "L1": "Memory/L1_情境层.yaml",
+            "L2": "Memory/L2_行为层.yaml",
+            "L3": "Memory/L3_认知层.yaml",
+            "L4": "Memory/L4_核心层.yaml"
+        }
+        
+        for layer_name, rel_path in layer_files.items():
+            if "all" in include_layers or layer_name.lower() in include_layers:
+                file_path = os.path.join(self.memory_root, rel_path)
+                if os.path.exists(file_path):
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            layers[layer_name] = yaml.safe_load(f)
+                    except Exception:
+                        layers[layer_name] = []
+        
+        return layers
+    
+    def _export_intents(self) -> Dict:
+        """导出意图"""
+        intents = {}
+        
+        intent_files = [
+            ("目标与规划", "Intent/目标与规划.yaml"),
+            ("偏好与要求", "Intent/偏好与要求.yaml"),
+            ("约束与边界", "Intent/约束与边界.yaml")
+        ]
+        
+        for intent_name, rel_path in intent_files:
+            file_path = os.path.join(self.memory_root, rel_path)
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        intents[intent_name] = yaml.safe_load(f)
+                except Exception:
+                    intents[intent_name] = []
+        
+        return intents
+    
+    def get_system_status(self) -> Dict:
+        """获取系统状态"""
+        status = {
+            "memory_root": self.memory_root,
+            "session_id": self.session_id,
+            "current_conversation": self.current_conversation["id"] if self.current_conversation else None,
+            "configs_loaded": list(self.configs.keys()),
+            "storage_usage": self._get_storage_usage(),
+            "last_backup": self._get_last_backup_time(),
+            "system_version": "1.0.0"
+        }
+        return status
+    
+    def _get_storage_usage(self) -> Dict:
+        """获取存储使用情况"""
+        total_size = 0
+        file_count = 0
+        
+        for root, dirs, files in os.walk(self.memory_root):
+            for file in files:
+                file_path = os.path.join(root, file)
+                try:
+                    total_size += os.path.getsize(file_path)
+                    file_count += 1
+                except OSError:
+                    pass
+        
+        return {
+            "total_size_bytes": total_size,
+            "total_size_mb": round(total_size / (1024 * 1024), 2),
+            "file_count": file_count
+        }
+    
+    def _get_last_backup_time(self) -> str:
+        """获取最后备份时间"""
+        backup_dir = os.path.join(self.memory_root, "Backups")
+        if not os.path.exists(backup_dir):
+            return "从未备份"
+        
+        latest_backup = None
+        latest_time = 0
+        
+        for root, dirs, files in os.walk(backup_dir):
+            for file in files:
+                if file.endswith(".json") or file.endswith(".zip"):
+                    file_path = os.path.join(root, file)
+                    try:
+                        mtime = os.path.getmtime(file_path)
+                        if mtime > latest_time:
+                            latest_time = mtime
+                            latest_backup = file_path
+                    except OSError:
+                        pass
+        
+        if latest_backup:
+            return datetime.fromtimestamp(latest_time).isoformat()
+        return "从未备份"
+    
+    def print_status(self):
+        """打印系统状态"""
+        status = self.get_system_status()
+        
+        print("=" * 60)
+        print("人格记忆系统状态")
+        print("=" * 60)
+        
+        print(f"记忆根目录: {status['memory_root']}")
+        print(f"会话ID: {status['session_id']}")
+        print(f"当前对话: {status['current_conversation'] or '无'}")
+        
+        storage = status['storage_usage']
+        print(f"存储使用: {storage['file_count']} 个文件, {storage['total_size_mb']} MB")
+        print(f"最后备份: {status['last_backup']}")
+        
+        print(f"已加载配置: {', '.join(status['configs_loaded'])}")
+        print("=" * 60)
+
+
+# 命令行接口
+def main():
+    """命令行主函数"""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="人格记忆系统")
+    parser.add_argument("--init", action="store_true", help="初始化系统")
+    parser.add_argument("--status", action="store_true", help="显示系统状态")
+    parser.add_argument("--config", help="更新配置: 配置名.键路径=值")
+    parser.add_argument("--get-config", help="获取配置: 配置名.键路径")
+    parser.add_argument("--start-conv", help="开始对话，提供上下文")
+    parser.add_argument("--add-intent", nargs=2, metavar=("类型", "内容"), help="添加意图")
+    parser.add_argument("--export", help="导出记忆库到指定路径")
+    
+    args = parser.parse_args()
+    
+    # 初始化系统
+    core = PersonaMemoryCore()
+    
+    if args.init:
+        print("系统已初始化")
+    
+    elif args.status:
+        core.print_status()
+    
+    elif args.config:
+        # 解析配置更新
+        if '=' in args.config:
+            config_spec, value = args.config.split('=', 1)
+            if '.' in config_spec:
+                config_name, key_path = config_spec.split('.', 1)
+                # 尝试解析值类型
+                try:
+                    if value.lower() in ['true', 'false']:
+                        value = value.lower() == 'true'
+                    elif value.isdigit():
+                        value = int(value)
+                    elif value.replace('.', '', 1).isdigit():
+                        value = float(value)
+                except:
+                    pass
+                
+                core.update_config(config_name, key_path, value)
+            else:
+                print("配置格式错误，应为: 配置名.键路径=值")
+        else:
+            print("配置格式错误，应为: 配置名.键路径=值")
+    
+    elif args.get_config:
+        if '.' in args.get_config:
+            config_name, key_path = args.get_config.split('.', 1)
+            value = core.get_config(config_name, key_path)
+            print(f"{args.get_config} = {value}")
+        else:
+            config = core.get_config(args.get_config)
+            print(json.dumps(config, ensure_ascii=False, indent=2))
+    
+    elif args.start_conv:
+        conv_id = core.start_conversation(args.start_conv)
+        print(f"对话已开始: {conv_id}")
+    
+    elif args.add_intent:
+        intent_type, content = args.add_intent
+        intent_id = core.add_intent(intent_type, content)
+        if intent_id:
+            print(f"意图已添加: {intent_id}")
+    
+    elif args.export:
+        if core.export_memory(args.export):
+            print(f"导出成功: {args.export}")
+        else:
+            print("导出失败")
+    
+    else:
+        # 交互模式
+        core.print_status()
+        print("\n可用命令:")
+        print("  --status                   显示系统状态")
+        print("  --config 配置名.键=值      更新配置")
+        print("  --get-config 配置名.键     获取配置")
+        print("  --start-conv '上下文'      开始对话")
+        print("  --add-intent 类型 '内容'   添加意图")
+        print("  --export 路径              导出记忆库")
+
+
+if __name__ == "__main__":
+    main()

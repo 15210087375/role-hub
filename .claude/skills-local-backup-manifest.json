@@ -1,0 +1,115 @@
+{
+  "repo_root": "D:\\devTools\\ai\\opencode\\role-hub",
+  "local_agents": "C:\\Users\\hzhnz\\.config\\opencode\\AGENTS.md",
+  "local_skills": "C:\\Users\\hzhnz\\.claude\\skills",
+  "managed_role_count": 10,
+  "local_only_skill_count": 15,
+  "items": [
+    {
+      "name": "behavior-memory",
+      "kind": "dir",
+      "sha256": "7de4f9201f51abe35d55b61f1893ddd9c2bc05cbe27dbf3fd471851b9a7c7bd3",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\behavior-memory",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\behavior-memory"
+    },
+    {
+      "name": "grok-mcp-installer",
+      "kind": "dir",
+      "sha256": "32ccb1900164e2944103768dfcdd7f37021318a41d43170c97cca672234f0cae",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\grok-mcp-installer",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\grok-mcp-installer"
+    },
+    {
+      "name": "grok-mcp-installer.skill",
+      "kind": "file",
+      "sha256": "e23a270ef8a957fe07e16d0f7008a0f431f35a9dc39afd554303fd535c44ae08",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\grok-mcp-installer.skill",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\grok-mcp-installer.skill"
+    },
+    {
+      "name": "habby-github-setup",
+      "kind": "dir",
+      "sha256": "65e7f861f9c52aa28bc30497f0efe163c5fb86a8cdc6b9d436320ea81f2a37fe",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\habby-github-setup",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\habby-github-setup"
+    },
+    {
+      "name": "habby-github-setup.skill",
+      "kind": "file",
+      "sha256": "ffb87496b093582dc9ab2dfee0bb2358ebca3f3bdc94ebe42d8a8470401e2faf",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\habby-github-setup.skill",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\habby-github-setup.skill"
+    },
+    {
+      "name": "habby-mcp-installer",
+      "kind": "dir",
+      "sha256": "1526d4875108b08d8ed10bf9ae373152463054a335c153545527183086cf0964",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\habby-mcp-installer",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\habby-mcp-installer"
+    },
+    {
+      "name": "habby-mcp-installer.skill",
+      "kind": "file",
+      "sha256": "4a1dd5e815b0402f59c903d5d6146157b893d1db7a7b4b3a925292bff2179425",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\habby-mcp-installer.skill",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\habby-mcp-installer.skill"
+    },
+    {
+      "name": "opencode-gemini-plugin-install",
+      "kind": "dir",
+      "sha256": "4bcfb01a5c8c45df2218aa8e015beffa80cc19319dc8ec55d2e824a6b26dbb08",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\opencode-gemini-plugin-install",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\opencode-gemini-plugin-install"
+    },
+    {
+      "name": "opencode-gemini-plugin-install.skill",
+      "kind": "file",
+      "sha256": "0ee61a8d652488636bdc18473c8626ac0c09391872c55a932386e5a28e876385",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\opencode-gemini-plugin-install.skill",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\opencode-gemini-plugin-install.skill"
+    },
+    {
+      "name": "opencode-notebooklm-mcp-installer-V1.6.0",
+      "kind": "dir",
+      "sha256": "ef39be373be2bdaa5dd9217e40aa90bf60406d31dd92879937956575776cd809",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\opencode-notebooklm-mcp-installer-V1.6.0",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\opencode-notebooklm-mcp-installer-V1.6.0"
+    },
+    {
+      "name": "opencode-notebooklm-mcp-installer-V1.6.0.skill",
+      "kind": "file",
+      "sha256": "b962cf389d99a43dd7fa3b7b3e8bf6706be4470650e60d552b158afe2464c70a",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\opencode-notebooklm-mcp-installer-V1.6.0.skill",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\opencode-notebooklm-mcp-installer-V1.6.0.skill"
+    },
+    {
+      "name": "persona-memory",
+      "kind": "dir",
+      "sha256": "f0f091f0e0ac736990cdc006b609dfac0a337c3eb0769bd5fadcf689352cd676",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\persona-memory",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\persona-memory"
+    },
+    {
+      "name": "persona-memory && cp CUsershzhnz.persona-memoryopencode_integration.py CUsershzhnz.claudeskillspersona-memory",
+      "kind": "file",
+      "sha256": "61b8e6158b3b6dee2b0a67ca19f32c38d44f0a1b4068c0363d3ff37f073748d7",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\persona-memory && cp CUsershzhnz.persona-memoryopencode_integration.py CUsershzhnz.claudeskillspersona-memory",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\persona-memory && cp CUsershzhnz.persona-memoryopencode_integration.py CUsershzhnz.claudeskillspersona-memory"
+    },
+    {
+      "name": "role-novel-architect",
+      "kind": "dir",
+      "sha256": "ca7115af2732f5828c5a032a902042c25b2d5707aec01e5f328f00aa19bdce16",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\role-novel-architect",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\role-novel-architect"
+    },
+    {
+      "name": "skills-hub-client",
+      "kind": "dir",
+      "sha256": "2631cf1cf5301616496d1f5a2bd22acdc4e11166cdc33198644976f62414f065",
+      "source": "C:\\Users\\hzhnz\\.claude\\skills\\skills-hub-client",
+      "target": "D:\\devTools\\ai\\opencode\\role-hub\\.claude\\skills-local-backup\\skills-hub-client"
+    }
+  ],
+  "note": "Device-specific settings (e.g., screenshot paths, machine-local paths) are intentionally excluded from sync scope."
+}

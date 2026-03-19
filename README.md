@@ -31,3 +31,11 @@ Cross-device role governance and skill execution bundle.
 
 - Check key role-to-skill alignment rules:
   - `python scripts/role_skill_alignment_check.py --repo-root .`
+
+## Memory Backup And Sync
+
+- Backup local non-repo memory into repository (AGENTS + local-only skills backup):
+  - `python scripts/memory_sync.py backup-local --repo-root . --apply`
+- Sync latest repository memory to local (managed scope only):
+  - `python scripts/memory_sync.py sync-to-local --repo-root . --apply`
+- Scope note: device-specific settings (e.g., screenshot paths, machine-local absolute paths) are intentionally excluded.
