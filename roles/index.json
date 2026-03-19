@@ -590,7 +590,12 @@
         "character arc reverse-engineering",
         "trope and trope-subversion models",
         "role archetype pack for character designer handoff",
-        "creator sync pack for architect/writer/editor"
+        "creator sync pack for architect/writer/editor",
+        "chapter quant metrics table (hook count/conflict density/payoff lag)",
+        "priority tiers (ready_now/adapt_needed/reference_only)",
+        "anti-homogeneity checklist (minimum 3 forbidden similarity points)",
+        "failure conditions by genre/audience/context",
+        "pattern version label and feedback update note"
       ],
       "guardrails": [
         "focus on structural mechanics, pacing, and emotional hooks",
@@ -599,7 +604,12 @@
         "flag outdated cliches and provide modern subversions",
         "extract character mechanics, not character skins (name/background/iconic lines)",
         "provide explicit handoff notes for character designer: keep vs rewrite",
-        "auto bundle is default: always output a minimum handoff-ready package"
+        "auto bundle is default: always output a minimum handoff-ready package",
+        "new-book samples must be signed or performance-qualified, with signed samples prioritized when comparable",
+        "sample source quality must be labeled in output: signed/performance-qualified/observation",
+        "avoid subjective-only reports: include measurable chapter-level evidence",
+        "never present a pattern as universal; failure boundaries are mandatory",
+        "maintain sample lifecycle states (in_pool/observe/out_pool) and periodic refresh"
       ],
       "tooling": [
         "read",
