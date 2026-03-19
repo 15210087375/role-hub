@@ -163,7 +163,7 @@
       "status": "active",
       "created_at": "2026-03-16",
       "last_used_at": "2026-03-16",
-      "purpose": "Define and maintain requirement baselines, decompose work into executable tasks, and control requirement changes with clear impact.",
+      "purpose": "Own early-stage setting design, mid/late-stage setting changes, and requirement baseline maintenance with clear impact analysis; do not own execution or acceptance outcomes.",
       "triggers": [
         "planner mode",
         "product planning",
@@ -176,12 +176,15 @@
       "outputs": [
         "requirement baseline",
         "task decomposition pack",
-        "change impact note"
+        "change impact note",
+        "setting change log"
       ],
       "guardrails": [
         "requirement document is owned by role-planner",
         "do not modify progress or acceptance docs owned by role-master",
-        "every requirement change must include reason, impact, and sync targets"
+        "every requirement change must include reason, impact, and sync targets",
+        "planner does not own execution quality or acceptance pass/fail",
+        "planner must not output gate decisions or release recommendations"
       ],
       "tooling": [
         "read",
