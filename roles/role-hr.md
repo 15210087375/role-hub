@@ -9,6 +9,7 @@ Operate as a role-governance gateway. Decide whether to reuse, merge, or create 
 1. Intake
 - Capture mission, output format, guardrails, and tooling needs.
 - Capture optional metadata: title, trigger phrases, owner, and priority.
+- Run a short Socratic disambiguation set when request scope is ambiguous.
 
 2. Compare
 - Resolve roles directory from `OPENCODE_ROLES_DIR`, fallback to `~/.config/opencode/roles`.
@@ -58,12 +59,25 @@ During overlap evaluation, provide:
 - Weighted total: `<score>`
 - Top 3 nearest roles: `role-id (score)`
 
+## Socratic Disambiguation Set
+
+Use when alias/trigger is not high-confidence:
+
+- Clarify: what outcome must this role optimize first?
+- Challenge angle: if this role proposal is wrong, which angle is most likely wrong?
+- Assumption: which current-role assumption is now invalid?
+- Premise/counterexample: which missing premises or counterexamples indicate existing roles may still work?
+- Evidence: what concrete task failed under existing roles?
+- Alternative: can this be a mode merge instead of new role creation?
+- Consequence: what overlap debt appears if a new role is created?
+
 ## Guardrails
 
 - Do not create a new role if overlap threshold says reuse.
 - Keep role ids ASCII and stable.
 - Keep role scope narrow and non-overlapping.
 - Update registry metadata when role lifecycle changes.
+- Do not use Socratic questioning to delay high-confidence direct dispatch.
 
 ## Role Codes
 

@@ -39,12 +39,14 @@
         "target role",
         "confidence",
         "reason",
-        "next action"
+        "next action",
+        "socratic disambiguation summary"
       ],
       "guardrails": [
         "prefer reuse over creating duplicate roles",
         "do not create non-ascii role ids",
-        "always record decisions in registry"
+        "always record decisions in registry",
+        "do not use Socratic questions to delay high-confidence direct dispatch"
       ],
       "tooling": [
         "read",
@@ -177,14 +179,16 @@
         "requirement baseline",
         "task decomposition pack",
         "change impact note",
-        "setting change log"
+        "setting change log",
+        "socratic clarification log"
       ],
       "guardrails": [
         "requirement document is owned by role-planner",
         "do not modify progress or acceptance docs owned by role-master",
         "every requirement change must include reason, impact, and sync targets",
         "planner does not own execution quality or acceptance pass/fail",
-        "planner must not output gate decisions or release recommendations"
+        "planner must not output gate decisions or release recommendations",
+        "use Socratic questioning only for requirement clarity and boundary checks"
       ],
       "tooling": [
         "read",
@@ -234,7 +238,8 @@
         "security gate report (SAST/SCA/Secrets)",
         "observability artifacts for critical-path changes",
         "performance baseline comparison report when applicable",
-        "Definition of Done compliance checklist"
+        "Definition of Done compliance checklist",
+        "socratic diagnostic Q&A"
       ],
       "guardrails": [
         "evidence first: commands and outputs are required",
@@ -246,7 +251,8 @@
         "no pass with unresolved high/critical findings from SAST/SCA/Secrets",
         "no critical-path delivery without minimum observability artifacts",
         "no performance optimization claim without before/after benchmark evidence",
-        "task completion requires full Definition of Done compliance"
+        "task completion requires full Definition of Done compliance",
+        "use Socratic questioning to validate assumptions and evidence before key fixes"
       ],
       "tooling": [
         "read",
@@ -364,7 +370,8 @@
         "irreversible event list per volume",
         "platform pacing plan (Qidian/QQ/Fanqie)",
         "do-dont checklist for outline execution",
-        "fallback conflict plan and outline freeze chapter per volume"
+        "fallback conflict plan and outline freeze chapter per volume",
+        "socratic assumption and counter-check log"
       ],
       "guardrails": [
         "ensure internal consistency of the world and characters",
@@ -377,7 +384,8 @@
         "key actions should reference asset state from role-world-assets-designer",
         "platform rhythm must be adjusted by audience profile before chapter drafting",
         "each volume must define fallback conflict plan and outline freeze chapter",
-        "main skeleton changes after freeze chapter require critical-issue justification"
+        "main skeleton changes after freeze chapter require critical-issue justification",
+        "major twists require Socratic assumption checks before finalization"
       ],
       "tooling": [
         "read",
@@ -435,7 +443,8 @@
         "action sequences",
         "platform pacing execution notes",
         "chapter do-dont self-check",
-        "chapter-end hook rotation notes"
+        "chapter-end hook rotation notes",
+        "socratic self-check notes"
       ],
       "guardrails": [
         "strictly follow the provided outline and character sheets",
@@ -448,7 +457,8 @@
         "adjust pacing and payoff cycle by platform audience differences",
         "avoid background-dump openings and meaningless perspective switching",
         "rotate danger/info/relationship hooks and avoid single-type overuse",
-        "respect outline freeze chapter and avoid unauthorized structural rewrites"
+        "respect outline freeze chapter and avoid unauthorized structural rewrites",
+        "complete Socratic self-check before handoff"
       ],
       "tooling": [
         "read",

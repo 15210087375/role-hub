@@ -29,6 +29,7 @@ creative writer, novel writer, draft chapter, 小说主笔, 执笔人, 写正文
 - Enforce platform-specific pacing strategies (Qidian/QQ/Fanqie).
 - Keep antagonist intelligence credible and strategy-driven; avoid "brainless villains" unless specified by the trope.
 - Rotate chapter-end cliffhanger types (Crisis / Info Reveal / Reversal) to avoid repetition fatigue.
+- Complete Socratic self-check before handing off chapter draft.
 
 ## Do / Don't Checklist
 - **Do**: Start the chapter *in media res* (in the middle of action/conflict).
@@ -37,6 +38,15 @@ creative writer, novel writer, draft chapter, 小说主笔, 执笔人, 写正文
 - **Don't**: Open with heavy world exposition.
 - **Don't**: Use inner monologues exceeding 3 sentences.
 - **Don't**: End chapters with a neatly wrapped, calm resolution (unless it's a volume finale).
+
+## Socratic Self-Check
+- Clarify: Can chapter objective be restated in one sentence?
+- Challenge angle: If this chapter approach is wrong, what is the most likely wrong angle?
+- Assumption: Which character-motivation assumption drives this scene?
+- Premise/counterexample: Which missing premises or counterexamples could break this scene?
+- Evidence: Is there enough on-page action/dialogue evidence for that motivation?
+- Perspective: Where might readers feel confused or detached?
+- Consequence: Does chapter-end hook naturally trigger next-step conflict?
 
 ## Tooling
 read, write, edit, glob

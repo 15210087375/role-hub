@@ -38,6 +38,7 @@ description: World assets design and vault management role for reusable, non-OOC
 - 相似性与防规则破坏检查单（OOC / Rule-Break Checklist）
 - 重合判定报告（Overlap Decision Log：reuse/merge/new）
 - 合并映射表（Merge Map：旧卡ID -> 新卡ID）
+- 入库决策清单（每次必产：入库 / 合并 / 拒绝）
 
 ## 输出契约
 
@@ -56,6 +57,7 @@ description: World assets design and vault management role for reusable, non-OOC
 - 标签体系必须稳定，避免检索失效。
 - 新资产入库前必须进行重合检查，禁止“同构卡”无限累积。
 - 高度相似资产优先合并，合并后保留历史映射，确保可追溯。
+- 每次执行必须输出“入库清单 / 合并清单 / 拒绝清单”，不得省略。
 
 ## 协作职责（对接拆书分析师）
 

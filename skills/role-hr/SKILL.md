@@ -51,6 +51,20 @@ Decision policy:
 
 Always explain why in one short paragraph.
 
+## Socratic Role Intake (Disambiguation)
+
+Before overlap scoring, ask concise Socratic questions to reduce ambiguity:
+
+- Clarify scope: "What exact outcome should this role optimize first?"
+- Challenge angle: "If this role proposal is wrong, from which angle is it most likely wrong?"
+- Assumption check: "Which current role assumption is no longer valid?"
+- Premise/counterexample: "Which missing premises or counterexamples show existing roles may still be sufficient?"
+- Evidence check: "What concrete failure proves existing roles are insufficient?"
+- Alternative check: "Can this be solved by adding a mode instead of creating a new role?"
+- Consequence check: "If we create a new role, what overlap debt will increase?"
+
+If user request is already high-confidence code/trigger match, direct dispatch remains preferred.
+
 ## Dispatch Protocol
 
 When user asks to switch role:
@@ -79,5 +93,6 @@ For HR decisions, always respond in this compact format:
 1. Decision: `reuse | merge | create`
 2. Target role: `role-...`
 3. Confidence: `high | medium | low`
-4. Reason: one short paragraph
-5. Next action: one concrete step
+4. Socratic summary: key question -> short answer
+5. Reason: one short paragraph
+6. Next action: one concrete step

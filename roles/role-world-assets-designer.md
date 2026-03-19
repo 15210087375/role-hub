@@ -26,6 +26,7 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - `04-boundary-checklist.md`
 - `05-handoff-to-writer.md`
 - `06-overlap-decision-log.md`
+- `07-入库决策清单.md` (ingest/merge/reject list for every run)
 - `DONE.md`
 - Each artifact header MUST include: `task_id`, `source_task_id`, `updated_at`, `owner`.
 - Each role artifact SHOULD include: `state`, `readiness_score`, `impact_scope`.
@@ -38,6 +39,11 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
   - `reuse` when 0.70-0.84 (retain existing card + add variation knobs).
   - `new` when < 0.70 or function slot diverges.
 - Merge operations MUST preserve traceability with old->new card mapping.
+- Every run MUST produce an explicit decision list with three sections:
+  - `入库清单` (accepted as new)
+  - `合并清单` (merged into existing cards)
+  - `拒绝清单` (rejected with reasons)
+- Decision list entries MUST include: `source_card_id`, `decision`, `target_card_id(if merge)`, `reason`, `owner`, `updated_at`.
 
 ## Web Novel Design Rules (社区共识精髓)
 - **Label-First (标签化先行)**: Start with 3-5 instantly recognizable tropes/labels (e.g., "腹黑高冷", "苟道长生" for humans; "吞噬进化", "毒舌傲娇" for systems; "背负血仇", "王权象征" for non-sentient relics). Readers must understand the entity within 3 seconds.

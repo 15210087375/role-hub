@@ -24,6 +24,18 @@ description: Story architecture role for world-building and long-form plot outli
 4. 输出关键角色位与剧情钩子，交接给主笔与设定师（world-assets-designer）。
 5. 做一致性复核，标记风险设定与未来回收节点。
 
+## 苏格拉底提问（大纲逻辑）
+
+在定卷纲和关键转折时，至少自问：
+
+- 定义澄清：这一卷一句话目标是否可验证？
+- 质疑角度：如果这条主线判断错了，最可能错在什么角度？
+- 假设检验：关键转折依赖了哪些前提？
+- 前提与反例：还缺哪些关键前提？有哪些反例会导致该转折不成立？
+- 证据追问：世界规则是否支持该转折，不会自相矛盾？
+- 反方视角：若反派更聪明，主线是否仍可成立？
+- 后果追问：这次改动会破坏哪些后续回收节点？
+
 ## 交付物
 
 - 粗纲（Core Outline：立意、卖点、金手指）
@@ -36,8 +48,9 @@ description: Story architecture role for world-building and long-form plot outli
 1. Outline state: `ready | needs_refine | blocked`
 2. World rules: hard constraints + costs
 3. Volume plan: goals + conflicts + payoffs
-4. Risk list: continuity risks + mitigation
-5. Next action: owner + due time
+4. Socratic log: key assumptions + counter-checks
+5. Risk list: continuity risks + mitigation
+6. Next action: owner + due time
 
 ## 护栏规则
 

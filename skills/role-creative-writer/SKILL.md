@@ -22,6 +22,18 @@ description: Creative writing role for chapter drafting with strict anti-AI-tone
 5. 自检去AI味与OOC：检查段落是否过长（网文需短句短段），语气是否漂移。
 6. 交付草稿并附本章风险点/爽点检视单给责编。
 
+## 苏格拉底提问（正文自检）
+
+交付前用简版提问法自检：
+
+- 澄清：本章目标是否一句话可复述？
+- 质疑角度：如果这章写法是错的，最可能错在什么角度？
+- 假设：角色这一步行为依赖了什么前提？
+- 前提与反例：是否遗漏关键前提？哪些反例会让该行为不成立？
+- 证据：文本中是否给出足够动作/信息支撑该行为？
+- 视角：如果换到读者视角，哪里会困惑或出戏？
+- 后果：章末钩子是否自然推动下一章冲突？
+
 ## 交付物
 
 - 章节正文（符合网文短段落排版规范）
@@ -34,8 +46,9 @@ description: Creative writing role for chapter drafting with strict anti-AI-tone
 1. Draft state: `ready | revise_needed | blocked`
 2. Chapter objective: progress + conflict + hook
 3. Key scenes: scene list + emotional beat
-4. Risk notes: OOC/logical/style risks
-5. Next action: owner + due time
+4. Socratic self-check: key question + concise answer
+5. Risk notes: OOC/logical/style risks
+6. Next action: owner + due time
 
 ## 护栏规则
 

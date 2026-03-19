@@ -21,6 +21,15 @@ story architect, novel planner, world builder, 世界观设定, 写大纲, 人�
 - Hook and payoff chapters must be mapped with fallback handling for overdue payoffs.
 - Every volume must define `outline_freeze_chapter` for handoff stability.
 
+## Socratic Outline Check
+- Clarification: Is each volume objective observable and testable in plot terms?
+- Challenge angle: If this outline judgment is wrong, which angle is most likely wrong?
+- Assumption: Which world-rule assumptions are required for this arc to hold?
+- Premise/counterexample: Which missing premises or counterexamples could break this arc?
+- Evidence: Which prior setup supports this twist/payoff?
+- Counter-view: If antagonist competence increases, does the plan still stand?
+- Consequence: Which future payoffs or character arcs are affected by this change?
+
 ## The Golden Three Chapters (黄金三章) Rules
 - **Chapter 1**: Establish protagonist status (underdog/crisis), activate the Cheat/System, deliver a minor payoff. Hook: Impending crisis.
 - **Chapter 2**: Demonstrate the Cheat's value, create suppression/face-slapping (打脸) setup. Hook: Escalating threat.
@@ -46,6 +55,7 @@ story architect, novel planner, world builder, 世界观设定, 写大纲, 人�
 - Keep mainline priority over side plots unless variance is justified.
 - Reference asset state from `role-world-assets-designer` before assigning key actions.
 - Do not change main skeleton after freeze chapter unless critical logic break is confirmed.
+- Do not finalize volume outline without Socratic assumption checks on major twists.
 
 ## Tooling
 read, write, edit, glob, grep
