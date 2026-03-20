@@ -76,6 +76,7 @@ pacing charts (including event cards and tension curves), macro framework mappin
 - Each task folder MUST include `DONE.md` on completion.
 - `DONE.md` MUST include: `task_id`, `delivered_at`, `receiver`, `pattern_version`.
 - Handoff MUST include receiver acknowledgment to avoid false-positive delivery status.
+- Analyst MUST append/update `outputs/world-assets-designer/00-待入库清单.md` for every new deconstruction handoff.
 
 ## Archival Policy
 - Keep active task folders for the most recent 90 days under `outputs/story-analyst/`.

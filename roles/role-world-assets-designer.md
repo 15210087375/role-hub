@@ -18,6 +18,7 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
 - Fixed root path: `outputs/world-assets-designer/`.
 - Task folder format: `outputs/world-assets-designer/<YYYYMMDD>-<task-id>/`.
 - Artifacts MUST NOT be scattered across ad-hoc folders.
+- Inbound queue file (read-first): `outputs/world-assets-designer/00-待入库清单.md`.
 
 ## Minimum Artifact Set
 - `01-profiles.md` (Standard Web Novel Character/Entity/Artifact Sheet)
@@ -44,6 +45,7 @@ world assets designer, 设定师, 资产库管理, 建立设定库, 记录新设
   - `合并清单` (merged into existing cards)
   - `拒绝清单` (rejected with reasons)
 - Decision list entries MUST include: `source_card_id`, `decision`, `target_card_id(if merge)`, `reason`, `owner`, `updated_at`.
+- If items come from the inbound queue, assets designer MUST update item state (`待处理|处理中|已完成|已拒绝`).
 
 ## Web Novel Design Rules (社区共识精髓)
 - **Label-First (标签化先行)**: Start with 3-5 instantly recognizable tropes/labels (e.g., "腹黑高冷", "苟道长生" for humans; "吞噬进化", "毒舌傲娇" for systems; "背负血仇", "王权象征" for non-sentient relics). Readers must understand the entity within 3 seconds.

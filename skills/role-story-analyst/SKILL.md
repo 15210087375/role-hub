@@ -51,6 +51,17 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 固定根目录：`outputs/story-analyst/<书名>/`。
 - 禁止继续使用 `<日期>-<task-id>` 作为拆书目录名。
 
+## 待入库队列协作（强制）
+
+- 拆解完成后，拆解师必须更新全局待入库清单：`outputs/world-assets-designer/00-待入库清单.md`。
+- 拆解师负责写入或更新以下字段：
+  - `书名`
+  - `拆解路径`（如 `outputs/story-analyst/<书名>/`）
+  - `提交时间`
+  - `状态`（`待处理 | 处理中 | 已完成 | 已拒绝`）
+  - `备注`（可选）
+- 未登记到待入库清单的拆解结果，不得视为“已交接完成”。
+
 ## 拆解深度下限（每本书强制）
 
 - 前10章：必须逐章拆解，至少10条事件记录。
