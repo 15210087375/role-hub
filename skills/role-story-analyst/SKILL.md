@@ -30,6 +30,8 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 5. 拆解核心系统与资产原型：提炼主角驱动力、力量体系闭环；提取核心外挂/系统/神器的底层运作逻辑与限制代价；提取关键人物的“背景+核心动机+人物弧光”。
 6. 形成模板（A阶段）：规则化、参数化，输出节奏模板与爽点机制池，并附“适用边界与失效条件”。
 7. 回灌交接：产出可套用的“黄金三章仿写大纲”、资产原型卡（Asset Archetype Card），明确“必须保留”与“必须重写”风险项。
+8. 交接验收自检：按“设定师可入库验收清单”逐项检查完整性；缺字段时标记 `partial` 并补齐后再提交待入库。
+9. 自动串行编排（强制）：拆解输出完成并登记待入库后，自动切换 `role-world-assets-designer` 执行入库；无需等待用户二次指令。
 
 ## 默认执行模式（Auto Bundle）
 
@@ -62,6 +64,17 @@ description: Story deconstruction role for extracting reusable pacing and hook m
   - `备注`（可选）
 - 未登记到待入库清单的拆解结果，不得视为“已交接完成”。
 
+## 自动切换与入库（强制）
+
+- 触发条件：当本书最小文件集输出完成，且 `00-待入库清单.md` 已登记该书状态为 `待处理`。
+- 执行动作：立即切换到 `role-world-assets-designer`，执行入库全流程。
+- 入库完成定义：以下三项同时完成才算结束：
+  - 更新 `01-资产总库（统一检索）.md`
+  - 更新 `02-词条索引（倒排）.md`
+  - 为每个入库资产生成子库详情文件，并回填总库 `详情路径`
+- 回写要求：入库完成后将待入库清单状态改为 `已完成`，并写入统一总库路径。
+- 禁止项：不得停留在“仅拆解未入库”的中间态，除非用户明确要求中止。
+
 ## 拆解深度下限（每本书强制）
 
 - 前10章：必须逐章拆解，至少10条事件记录。
@@ -75,6 +88,7 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 ## 原型卡规格（库存化增强）
 
 - 原型卡数量不设上限；拆解时应尽可能完整覆盖关键角色与关键资产。
+- 默认采用“高召回优先”策略：宁可冗余，不可漏掉潜在可用资产。
 - 原型卡必须支持“直接入库+可检索+可改写”。
 - 每张原型卡至少包含以下字段：
   - `card_id`（唯一编号）
@@ -85,13 +99,36 @@ description: Story deconstruction role for extracting reusable pacing and hook m
   - `conflict_engine`（冲突引擎）
   - `arc_or_evolution`（弧光/进化树）
   - `memory_anchor`（记忆锚点）
+  - `highlight_moments`（高光时刻，建议2-5条，含触发条件）
+  - `classic_cases`（经典案例，建议1-3条，含场景与结果）
   - `boundary_rules`（必须做/绝不能做）
   - `reuse_tags`（复用标签）
+  - `search_entries`（多词条检索，建议6-12个）
   - `variation_knobs`（可调参数）
   - `forbidden_anchors`（禁用锚点，防融梗）
   - `community_signal`（讨论度/情绪倾向）
   - `evidence_refs`（证据回指）
+- 高光与案例必须“可迁移”：描述机制与触发条件，不复刻原作皮相细节。
 - 对 `mixed` 原型，必须追加“改写注意事项”；`negative` 原型不得入库。
+
+## 高召回交接规则（给设定师）
+
+- 拆解交接默认允许冗余：功能位相同但行为方式/性格/代价不同的原型必须并列保留。
+- 同功能位原型不得强行合并；拆解师只负责“尽量多召回 + 标差异”，不做最终删减。
+- 必须追加 `difference_notes` 字段：至少写清三项差异（驱动、代价、冲突引擎）。
+- 必须追加 `candidate_pool` 标记：`core | optional | experimental`，供设定师后续裁剪。
+- 设定师拥有删减与合并权；拆解师需提供充分证据，避免“低信息交接”。
+
+## 设定师可入库验收清单（拆解端必填）
+
+- 角色/资产基础：`card_id`、`asset_type`、`function_slot`、`core_drive`、`hard_flaw_or_cost`、`conflict_engine`。
+- 可写作调用：`highlight_moments`（2-5条）与 `classic_cases`（1-3条），均需写触发条件与结果。
+- 边界与安全：`boundary_rules`、`forbidden_anchors`、失效边界（何时不适用）。
+- 检索与筛选：`reuse_tags`、`search_entries`（6-12个）、`candidate_pool`（core/optional/experimental）。
+- 差异化信息：同功能位并列原型必须有 `difference_notes`，至少覆盖驱动/代价/冲突引擎三项差异。
+- 证据可追溯：`evidence_refs` 必须回指章节或事件卡编号，禁止无证据结论。
+- 交接裁定：每张卡必须标注 `inventory_decision`（through/mixed/negative）与改写注意事项（mixed必填）。
+- 缺失处理：任一必填缺失即该卡判为 `partial`，不得标记“已交接完成”。
 
 ## 角色/资产原型验证（社区共识）
 
@@ -173,6 +210,7 @@ description: Story deconstruction role for extracting reusable pacing and hook m
 - 你负责：抽象角色、系统、神器的底层机制、打可复用标签、提供交接风险提示。
 - 设定师负责：世界观重铸、关系网重建、表层皮相重写、入库归档。
 - 交接标准：必须明确 `必须保留` 与 `必须重写` 两组字段。
+- 协作原则：拆解端“高召回”，设定端“强裁剪”；优先保证可选空间，再由设定师去重控噪。
 
 ## 触发词
 

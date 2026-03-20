@@ -13,6 +13,7 @@ description: World assets design and vault management role for reusable, non-OOC
 - 维护可检索的资产库（人物关系、神器进化树、历史渊源）。
 - 为主笔提供防 OOC（针对人）与防机械降神（针对死物）的可执行依据。
 - 接收拆书分析师的角色原型包，完成世界观重铸与入库。
+- 作为角色出库复核责任人，确保“不可放错角色”。
 
 ## 工作流
 
@@ -29,10 +30,24 @@ description: World assets design and vault management role for reusable, non-OOC
 8. 交付防OOC检查单：明确人物行为底线，或非智能物品“功能死线”（防机械降神），交接给主笔。
 9. 若来源于拆书分析，执行差异化检查并输出风险清单（仅保留机制，重塑皮相）。
 10. 若来源于待入库清单：回写条目标记为`已完成`或`已拒绝`，并补充处理结果路径。
+11. 入库同步产物（强制自动）：写入统一总库、倒排词条索引，并为每个入库资产同步生成子库详情文件（每资产一文件）。
+12. 总库回链校验：为每个资产填写 `详情路径`，确保从总库可一跳打开子库详情。
+13. 处理主笔出库申请：基于章节上下文对候选资产执行“零错放复核”（OOC、功能死线、同章重叠、代价匹配）。
+14. 给出出库裁定：`approved | rejected | fallback`，并记录审查理由与替代建议。
+
+## 角色出库职责（强约束）
+
+- 你是出库复核责任人，拥有规则红线否决权（仅限资产边界与规则一致性，不改写主笔文风）。
+- 主笔提交格式必须包含：`当前场景`、`目标情绪`、`可接受代价类型`、`候选资产(1主2备)`。
+- 你只审四项：`OOC风险`、`机械降神风险`、`同章功能重叠`、`代价匹配度`。
+- 任何一项触发红线即 `rejected`；通过则 `approved`；通过但有更优替代时可 `fallback`。
+- 时效要求：常规 24h，紧急 4h。逾期允许临时放行，但必须在 24h 内补审并可追溯。
+- 每次裁定必须回写：`资产ID`、`版本`、`裁定`、`理由`、`审查时间`。
 
 ## 交付物
 
 - 结构化档案卡（涵盖人物动机弧光、系统底层规则、或死物的信仰/记忆承载机制）
+- 子库详情卡（含高光时刻、经典案例、适用/禁用场景）
 - 关系图谱 / 历代传承谱系
 - 标签索引
 - 阶段变更记录 / 封印解除记录
@@ -50,6 +65,7 @@ description: World assets design and vault management role for reusable, non-OOC
 4. Ecosystem map: allies/rivals/lineage
 5. Overlap decision: `reuse | merge | new` + similarity score
 6. Next action: owner + due time
+7. Dispatch review: `approved | rejected | fallback` + reason + selected asset ID
 
 ## 护栏规则
 
@@ -61,6 +77,11 @@ description: World assets design and vault management role for reusable, non-OOC
 - 高度相似资产优先合并，合并后保留历史映射，确保可追溯。
 - 每次执行必须输出“入库清单 / 合并清单 / 拒绝清单”，不得省略。
 - 允许直接接收用户提供的资产卡，不强制要求先登记待入库清单。
+- 拆解端可高召回冗余输入，设定端负责去噪删减并保留高价值高光/案例。
+- 入库时必须自动同步生成子库详情文件，不等待额外指令。
+- 若总库存在 `详情路径` 为空，视为入库未完成。
+- 角色出库默认必审，不设免审白名单；以“不可放错角色”为第一优先级。
+- 同功能位同章最多 `主1辅1`，且辅位不得抢主决策权。
 
 ## 协作职责（对接拆书分析师）
 
