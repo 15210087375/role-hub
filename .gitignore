@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test outputs
+outputs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Local skills backup
+.claude/skills-local-backup/
+
+# OpenCode config
+.config/opencode/roles/__pycache__/
+
+# Test projects (keep template only)
+projects/*/
+!projects/template-project/
+
+# Templates directory
+templates/
+
+# Scripts cache
+scripts/__pycache__/
+
+# Roles cache
+roles/__pycache__/
+
+# Tools cache
+tools/__pycache__/

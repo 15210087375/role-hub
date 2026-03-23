@@ -2,7 +2,36 @@
 
 Cross-device role governance and skill execution bundle.
 
-## Structure
+## 网文创作协作系统
+
+我们已经成功建立了一个完整的网文创作协作系统，包含三个核心角色、标准化项目模板和配套工具集。
+
+### 核心功能
+- **三个专业角色**: 架构师、主笔、责编
+- **标准化项目模板**: 8层目录结构
+- **自动化工具集**: 项目初始化、角色查询、一致性检查
+- **质量控制体系**: 去AI味、角色一致性、世界真实性
+
+### 快速开始
+```bash
+# 创建新项目
+cd tools
+python project-init.py 我的小说
+
+# 进入项目
+cd ../projects/我的小说
+
+# 检查一致性
+python ../../tools/consistency-check.py
+```
+
+详细使用指南请查看 [USAGE.md](USAGE.md)
+
+---
+
+## 原始role-hub功能
+
+### Structure
 
 - `roles/`: source of truth registry, role definitions, management scripts.
 - `skills/`: executable role skills for OpenCode.

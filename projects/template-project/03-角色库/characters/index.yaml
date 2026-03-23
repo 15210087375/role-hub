@@ -1,0 +1,244 @@
+# 角色库索引
+
+# 索引说明
+# 本文件为角色库的快速索引
+# 按角色重要性分级管理
+# 便于快速查询和统计
+
+# 角色分级
+p0_core_characters:  # 核心角色（必须维护）
+  - id: "char-001"
+    name: "[主角姓名]"
+    role: "主角，剧情推动者"
+    status: "[状态]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-002"
+    name: "[重要反派]"
+    role: "主要对手，冲突来源"
+    status: "[状态]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-003"
+    name: "[重要盟友]"
+    role: "核心支持者，关键助力"
+    status: "[状态]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-004"
+    name: "[导师/长辈]"
+    role: "引导者，知识来源"
+    status: "[状态]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-005"
+    name: "[重要女性角色]"
+    role: "情感线，关键伙伴"
+    status: "[状态]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+
+p1_important_characters:  # 重要配角（需要维护）
+  - id: "char-101"
+    name: "[配角1]"
+    role: "[功能]"
+    appearance_frequency: "[频率]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-102"
+    name: "[配角2]"
+    role: "[功能]"
+    appearance_frequency: "[频率]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+    
+  - id: "char-103"
+    name: "[配角3]"
+    role: "[功能]"
+    appearance_frequency: "[频率]"
+    last_updated: "[日期]"
+    owner: "[架构师]"
+
+p2_minor_characters:  # 次要角色（记录变化）
+  - id: "char-201"
+    name: "[次要1]"
+    role: "[功能]"
+    importance: "[程度]"
+    last_updated: "[日期]"
+    owner: "[主笔]"
+    
+  - id: "char-202"
+    name: "[次要2]"
+    role: "[功能]"
+    importance: "[程度]"
+    last_updated: "[日期]"
+    owner: "[主笔]"
+
+p3_npc_characters:  # 路人角色（按需记录）
+  shop_keepers:
+    - type: "商店老板"
+      scene: "交易场景"
+      record_requirement: "记名字和基础特征"
+      example: "老王铁匠铺"
+      
+  quest_npcs:
+    - type: "任务NPC"
+      scene: "任务发布"
+      record_requirement: "记名字和任务内容"
+      example: "李四村长"
+      
+  one_time_characters:
+    - type: "一次性角色"
+      scene: "单次出场"
+      record_requirement: "可不记录"
+      example: "路人甲"
+
+# 角色关系网络
+core_relationship_circle:
+  protagonist: "[主角姓名]"
+  allies: "[角色列表]"
+  enemies: "[角色列表]"
+  mentors: "[角色列表]"
+  love_interests: "[角色列表]"
+
+faction_affiliations:
+  - faction: "[势力1]"
+    core_members: "[成员]"
+    peripheral_members: "[成员]"
+    enemy_factions: "[势力]"
+    
+  - faction: "[势力2]"
+    core_members: "[成员]"
+    peripheral_members: "[成员]"
+    enemy_factions: "[势力]"
+
+grudges_and_relationships:
+  - type: "血海深仇"
+    characters: "[角色A] ↔ [角色B]"
+    reason: "[原因]"
+    current_status: "[状态]"
+    
+  - type: "利益冲突"
+    characters: "[角色C] ↔ [角色D]"
+    reason: "[原因]"
+    current_status: "[状态]"
+    
+  - type: "理念对立"
+    characters: "[角色E] ↔ [角色F]"
+    reason: "[原因]"
+    current_status: "[状态]"
+
+# 角色状态总览
+active_status_overview:
+  active:
+    count: "[数量]"
+    representative: "[角色]"
+    description: "正常参与剧情"
+    
+  missing:
+    count: "[数量]"
+    representative: "[角色]"
+    description: "暂时消失，可能回归"
+    
+  injured:
+    count: "[数量]"
+    representative: "[角色]"
+    description: "受伤恢复中"
+    
+  in_seclusion:
+    count: "[数量]"
+    representative: "[角色]"
+    description: "修炼或疗伤"
+    
+  deceased:
+    count: "[数量]"
+    representative: "[角色]"
+    description: "已死亡角色"
+
+geographic_distribution:
+  - location: "[地点1]"
+    character_count: "[数量]"
+    main_characters: "[角色]"
+    description: "[说明]"
+    
+  - location: "[地点2]"
+    character_count: "[数量]"
+    main_characters: "[角色]"
+    description: "[说明]"
+
+# 角色发展追踪
+recent_changes:
+  - date: "[日期]"
+    character: "[角色]"
+    change_type: "[类型]"
+    change_content: "[内容]"
+    recorder: "[姓名]"
+    
+  - date: "[日期]"
+    character: "[角色]"
+    change_type: "[类型]"
+    change_content: "[内容]"
+    recorder: "[姓名]"
+
+pending_changes:
+  - character: "[角色]"
+    pending_change: "[变化]"
+    requirement: "[要求]"
+    owner: "[姓名]"
+    deadline: "[时间]"
+
+# 查询指南
+query_guide:
+  quick_commands:
+    - command: "python ../../tools/character-query.py [角色名]"
+      description: "查询角色基本信息"
+      
+    - command: "python ../../tools/character-query.py [角色名] --timeline"
+      description: "查询角色时间线"
+      
+    - command: "python ../../tools/character-query.py [角色名] --relations"
+      description: "查询角色关系"
+
+  file_locations:
+    detailed_profiles: "characters/[角色ID].md"
+    relationship_diagram: "角色关系图.md"
+    change_records: "../../08-协作记录/主笔变化记录/"
+
+# 维护规范
+maintenance_spec:
+  update_frequency:
+    p0: "每章更新状态变化"
+    p1: "每卷更新状态变化"
+    p2: "重要变化时更新"
+    p3: "一般不更新，特殊情况记录"
+
+  update_content:
+    - "状态变化: 所在地、伤势、情绪等"
+    - "能力变化: 等级提升、新技能、装备变化"
+    - "关系变化: 新关系建立、旧关系变化"
+    - "剧情进展: 参与的重要事件"
+
+  update_workflow: |
+    主笔记录变化 → 提交变化记录
+          ↓
+    责编检查确认 → 标记已验证
+          ↓
+    架构师整合更新 → 更新正式档案
+
+# 统计信息
+statistics:
+  total_characters: "[数量]"
+  active_characters: "[数量]"
+  deceased_characters: "[数量]"
+  last_statistics_time: "[日期]"
+
+# 元数据
+metadata:
+  last_updated: "[YYYY-MM-DD]"
+  updated_by: "[姓名]"
+  version: "[版本号]"

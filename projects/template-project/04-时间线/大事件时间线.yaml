@@ -1,0 +1,229 @@
+# 大事件时间线
+
+# 时间体系说明
+time_system:
+  calendar: "[纪年法，如: 天元历]"
+  time_units:
+    year: "[年单位名称]"
+    month: "[月单位名称]"
+    day: "[日单位名称]"
+  start_year: "[故事开始年份]"
+  current_year: "[当前年份]"
+
+# 历史大事件
+historical_events:
+  - year: "[年份]"
+    event: "[事件名称]"
+    description: "[事件描述]"
+    impact: "[影响范围]"
+    key_figures: "[关键人物]"
+    relevance: "[与当前剧情关联]"
+    
+  - year: "[年份]"
+    event: "[事件名称]"
+    description: "[事件描述]"
+    impact: "[影响范围]"
+    key_figures: "[关键人物]"
+    relevance: "[与当前剧情关联]"
+
+# 第一卷时间线 (元年)
+volume_1_timeline:
+  - time: "元年1月"
+    event: "[事件1]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "元年3月"
+    event: "[事件2]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "元年6月"
+    event: "[事件3]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "元年9月"
+    event: "[事件4]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "元年12月"
+    event: "[事件5]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+
+# 第二卷时间线 (二年)
+volume_2_timeline:
+  - time: "二年2月"
+    event: "[事件1]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "二年5月"
+    event: "[事件2]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "二年8月"
+    event: "[事件3]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "二年11月"
+    event: "[事件4]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+
+# 第三卷时间线 (三年)
+volume_3_timeline:
+  - time: "三年1月"
+    event: "[事件1]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "三年4月"
+    event: "[事件2]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "三年7月"
+    event: "[事件3]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+    
+  - time: "三年10月"
+    event: "[事件4]"
+    location: "[发生地点]"
+    involved_characters: "[涉及角色]"
+    plot_significance: "[剧情意义]"
+    reader_experience: "[读者体验]"
+
+# 世界发展事件 (主角未参与)
+world_development_events:
+  - time: "[时间]"
+    event: "[事件名称]"
+    location: "[发生地点]"
+    description: "[事件描述]"
+    impact: "[对世界的影响]"
+    known_by_protagonist: "[主角是否知道]"
+    relevance: "[与主线关联]"
+    
+  - time: "[时间]"
+    event: "[事件名称]"
+    location: "[发生地点]"
+    description: "[事件描述]"
+    impact: "[对世界的影响]"
+    known_by_protagonist: "[主角是否知道]"
+    relevance: "[与主线关联]"
+
+# 季节与节日
+seasons_and_festivals:
+  spring:
+    - time: "每年1-3月"
+      characteristics: "[季节特点]"
+      festivals: "[节日列表]"
+      cultural_significance: "[文化意义]"
+      
+  summer:
+    - time: "每年4-6月"
+      characteristics: "[季节特点]"
+      festivals: "[节日列表]"
+      cultural_significance: "[文化意义]"
+      
+  autumn:
+    - time: "每年7-9月"
+      characteristics: "[季节特点]"
+      festivals: "[节日列表]"
+      cultural_significance: "[文化意义]"
+      
+  winter:
+    - time: "每年10-12月"
+      characteristics: "[季节特点]"
+      festivals: "[节日列表]"
+      cultural_significance: "[文化意义]"
+
+# 时间跳跃记录
+time_jumps:
+  - from: "[起始时间]"
+    to: "[结束时间]"
+    duration: "[跳跃时长]"
+    reason: "[跳跃原因]"
+    changes_during_jump: "[跳跃期间的变化]"
+    revealed_to_reader: "[如何向读者揭示]"
+
+# 时间线查询指南
+query_guide:
+  time_calculation: "python ../../tools/timeline-calc.py [起始时间] [结束时间]"
+  event_search: "在文件中搜索 [时间] 或 [事件关键词]"
+  location_timeline: "查看地点发展记录/[地点名称].md"
+
+# 时间一致性检查
+consistency_checks:
+  character_locations:
+    - check: "角色在同一时间不能出现在两个地方"
+      method: "对比角色时间线记录"
+      
+  event_sequence:
+    - check: "事件发生顺序要合理"
+      method: "检查时间先后顺序"
+      
+  aging_consistency:
+    - check: "角色年龄随时间增长"
+      method: "计算时间跨度与年龄变化"
+      
+  seasonal_consistency:
+    - check: "季节描写与时间匹配"
+      method: "检查事件时间与季节描述"
+
+# 时间线维护记录
+maintenance_log:
+  - date: "[更新日期]"
+    updated_by: "[更新人]"
+    changes: "[更新内容]"
+    reason: "[更新原因]"
+    
+  - date: "[更新日期]"
+    updated_by: "[更新人]"
+    changes: "[更新内容]"
+    reason: "[更新原因]"
+
+# 统计信息
+statistics:
+  total_events: "[事件总数]"
+  events_by_year:
+    "元年": "[数量]"
+    "二年": "[数量]"
+    "三年": "[数量]"
+  last_updated: "[最后更新时间]"
+
+# 元数据
+metadata:
+  created: "[创建日期]"
+  last_updated: "[最后更新日期]"
+  updated_by: "[最后更新人]"
+  version: "[版本号]"
